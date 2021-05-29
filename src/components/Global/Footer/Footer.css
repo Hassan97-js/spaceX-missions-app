@@ -1,9 +1,14 @@
 @import url("../css/Variables.css");
 
 footer#Footer {
-  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5.5rem;
   font-size: 1.2rem;
   color: var(--black-color);
+  display: flex;
+  align-items: center;
 }
 
 footer#Footer p#footer-content {

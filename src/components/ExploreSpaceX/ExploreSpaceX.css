@@ -53,6 +53,11 @@ div#mission {
   padding: 1rem;
 }
 
+div#mission p,
+p#before-fetching {
+  max-width: 400px;
+}
+
 p.failure-launch,
 p.success-launch,
 p.danger-alert {
@@ -72,10 +77,6 @@ p.danger-alert {
 p.success-launch {
   border: 1px solid var(--success-color);
   color: var(--success-color);
-}
-
-div#mission p {
-  max-width: 400px;
 }
 
 div#image-wrapper {

@@ -8,9 +8,11 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      {/* <WelcomeSpaceX /> */}
-      <ExploreSpaceX />
+      <div className="content-wrap">
+        <Navbar />
+        {/* <WelcomeSpaceX /> */}
+        <ExploreSpaceX />
+      </div>
       <Footer />
     </div>
   );
