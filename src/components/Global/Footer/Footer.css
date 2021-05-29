@@ -1,0 +1,12 @@
+@import url("../css/Variables.css");
+
+footer#Footer {
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--black-color);
+}
+
+footer#Footer p#footer-content {
+  text-align: center;
+  margin: 1.5rem auto;
+}

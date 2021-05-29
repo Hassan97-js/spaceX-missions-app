@@ -66,25 +66,24 @@ function ExploreSpaceX() {
             <div id="launch-success">
               {launch.launch_failure_details ? (
                 <div className="launch-failure-details">
-                  <p>
-                    {" "}
-                    <span className="highlight-text">
-                      {" "}
-                      Launch is unsuccessful
-                    </span>
-                  </p>
+                  <p className="failure-launch">Launch is unsuccessful</p>
                   <p className="failure-times">
                     <span className="highlight-text">Failure times:</span>{" "}
                     Launch has failed{" "}
                     {launch.launch_failure_details.time + " times."}
                   </p>
                   <p className="failure-reason">
-                    Launch failure reason:{" "}
+                    <span className="highlight-text">
+                      {" "}
+                      Launch failure reason:{" "}
+                    </span>{" "}
                     {launch.launch_failure_details.reason}
                   </p>
                 </div>
               ) : (
-                <p>{launch.launch_success} Launch is successful</p>
+                <p className="success-launch">
+                  {launch.launch_success} Launch is successful
+                </p>
               )}
             </div>
           </div>

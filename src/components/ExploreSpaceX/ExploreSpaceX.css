@@ -1,15 +1,15 @@
-:root {
-  --danger-color: #d64242;
-  --white-color: #ffffff;
-  --orange-color: #ffa229;
-}
+@import url("../Global/css/Variables.css");
 
 p#before-fetching {
+  background: var(--orange-color);
+  color: var(--white-color);
+  padding: 0.8rem;
   border-bottom: 1rem solid var(--orange-color);
   border-radius: 0.2rem;
   margin: 0 auto;
   font-size: 5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 section#missions-wrapper {
@@ -18,9 +18,11 @@ section#missions-wrapper {
 }
 
 h1#explore-header {
-  border-bottom: 1rem solid var(--white-color);
+  border-bottom: 1rem solid var(--orange-color);
   border-radius: 0.2rem;
   font-weight: 900;
+  background: var(--white-color);
+  padding: 0.5rem;
 }
 
 div#header-background-img {
@@ -51,6 +53,31 @@ div#mission {
   padding: 1rem;
 }
 
+p.failure-launch,
+p.success-launch,
+p.danger-alert {
+  background: none;
+  width: 200px;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+p.failure-launch,
+p.danger-alert {
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+p.success-launch {
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+}
+
+div#mission p {
+  max-width: 400px;
+}
+
 div#image-wrapper {
   width: 100%;
 }
@@ -59,13 +86,4 @@ img#spaceXimage {
   font-size: 1.5rem;
   width: 8rem;
   height: 8rem;
-}
-
-p.danger-alert {
-  border-radius: 0.2rem;
-  width: 40%;
-  padding: 1rem;
-  font-weight: 600;
-  background-color: var(--danger-color);
-  color: var(--white-color);
 }

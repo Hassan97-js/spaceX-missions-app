@@ -1,11 +1,4 @@
-:root {
-  --danger-color: #d64242;
-  --white-color: #ffffff;
-  --orange-color: #ffa229;
-  --light-orange-color: #ffb656;
-  --black-color: #000;
-  --blue-color: #97c4fc;
-}
+@import url("../css/Variables.css");
 
 nav#flex-nav {
   height: 10vh;
@@ -17,7 +10,6 @@ img#logo {
   width: 20rem;
   height: 80%;
   object-fit: contain;
-  background: var(--blue-color);
   padding: 0.5rem;
   border-radius: 0.2rem;
 }
