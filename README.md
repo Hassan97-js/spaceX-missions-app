@@ -1,4 +1,4 @@
-# Getting Started SpaceX Missions App
+# Getting Started With SpaceX Missions App
 
 ### `npm install`
 
