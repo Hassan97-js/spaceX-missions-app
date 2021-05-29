@@ -79,7 +79,8 @@ function ExploreSpaceX() {
                     {launch.launch_failure_details.time + " times."}
                   </p>
                   <p className="failure-reason">
-                    Launch failure reason {launch.launch_failure_details.reason}
+                    Launch failure reason:{" "}
+                    {launch.launch_failure_details.reason}
                   </p>
                 </div>
               ) : (
@@ -98,7 +99,7 @@ function ExploreSpaceX() {
       ) : (
         <>
           <div id="header-background-img">
-            <h1 id="explore-header">Explore SpaceX Launches</h1>
+            <h1 id="explore-header">Explore SpaceX Launches 🚀 </h1>
           </div>
           <section id="missions-wrapper">
             <h1>All Missions</h1>

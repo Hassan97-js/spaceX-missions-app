@@ -3,9 +3,3 @@
   --orange-color: #ffa229;
   --white-color: #fff;
 }
-
-h1#explore-header {
-  border-bottom: 1rem solid var(--white-color);
-  border-radius: 0.2rem;
-  font-weight: 900;
-}

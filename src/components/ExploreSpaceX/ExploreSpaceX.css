@@ -17,6 +17,12 @@ section#missions-wrapper {
   margin: 0 auto;
 }
 
+h1#explore-header {
+  border-bottom: 1rem solid var(--white-color);
+  border-radius: 0.2rem;
+  font-weight: 900;
+}
+
 div#header-background-img {
   height: 50rem;
   background: url("../../assets/images/spacexImage.jpg");

@@ -4,19 +4,22 @@
   --orange-color: #ffa229;
   --light-orange-color: #ffb656;
   --black-color: #000;
-  --grey-color: #cccdd4;
+  --blue-color: #97c4fc;
 }
 
 nav#flex-nav {
-  background-color: var(--grey-color);
   height: 10vh;
   padding: 1rem;
   display: flex;
 }
 
 img#logo {
-  width: 25rem;
+  width: 20rem;
+  height: 80%;
   object-fit: contain;
+  background: var(--blue-color);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 div#nav-links {
