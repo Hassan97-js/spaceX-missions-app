@@ -1,0 +1,65 @@
+:root {
+  --danger-color: #d64242;
+  --white-color: #ffffff;
+  --orange-color: #ffa229;
+}
+
+p#before-fetching {
+  border-bottom: 1rem solid var(--orange-color);
+  border-radius: 0.2rem;
+  margin: 0 auto;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+section#missions-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+div#header-background-img {
+  height: 50rem;
+  background: url("../../assets/images/spacexImage.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange-color);
+  border: 1rem solid var(--orange-color);
+  border-radius: 0.2rem;
+}
+
+section div.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 20px;
+}
+
+div#mission {
+  border-radius: 0.2rem;
+  box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+div#image-wrapper {
+  width: 100%;
+}
+
+img#spaceXimage {
+  font-size: 1.5rem;
+  width: 8rem;
+  height: 8rem;
+}
+
+p.danger-alert {
+  border-radius: 0.2rem;
+  width: 40%;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}

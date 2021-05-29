@@ -1,0 +1,41 @@
+:root {
+  --danger-color: #d64242;
+  --white-color: #ffffff;
+  --orange-color: #ffa229;
+  --light-orange-color: #ffb656;
+  --black-color: #000;
+  --grey-color: #cccdd4;
+}
+
+nav#flex-nav {
+  background-color: var(--grey-color);
+  height: 10vh;
+  padding: 1rem;
+  display: flex;
+}
+
+img#logo {
+  width: 25rem;
+  object-fit: contain;
+}
+
+div#nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+div#nav-links a.nav-link {
+  border-radius: 0.2rem;
+  background: var(--orange-color);
+  color: var(--white-color);
+  font-size: 1.4rem;
+  margin: 0.5rem;
+  padding: 0.9rem;
+}
+
+div#nav-links a.nav-link:hover {
+  background-color: var(--light-orange-color);
+  transition: 0.2s;
+}
