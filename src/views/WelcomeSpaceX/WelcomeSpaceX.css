@@ -1,0 +1,68 @@
+@import url("../../components/Global/css/Variables.css");
+
+/* div#WelcomeSpaceX {
+  height: 80vh;
+} */
+
+div#WelcomeSpaceX img#logo {
+  width: 20rem;
+  margin: 0 auto;
+  object-fit: contain;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+header#WelcomeSpaceX-header {
+  padding: 2rem;
+  background-color: var(--white-color);
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header#WelcomeSpaceX-header h1#welcome-header {
+  background: var(--black-color);
+  color: var(--white-color);
+  margin: 0;
+  padding: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+div#WelcomeSpaceX-background {
+  height: 75vh;
+  background: url("./../../assets/images//welcomeSpaceXRcoket.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+div#WelcomeSpaceX-background h2#background-header {
+  margin-left: 2rem;
+  background: var(--orange-color);
+  color: var(--white-color);
+  max-width: 1500px;
+  padding: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+div#WelcomeSpaceX-background a {
+  background: var(--white-color);
+  padding: 1rem;
+  border-radius: 0.2rem;
+  color: var(--orange-color);
+  transition: background 0.2s;
+}
+
+div#WelcomeSpaceX-background a:hover {
+  background: var(--orange-color);
+  padding: 1rem;
+  border-radius: 0.2rem;
+  color: var(--white-color);
+}

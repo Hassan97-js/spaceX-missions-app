@@ -1,4 +1,4 @@
-@import url("../Global/css/Variables.css");
+@import url("../../components/Global/css/Variables.css");
 
 p#before-fetching {
   background: var(--orange-color);
@@ -12,11 +12,6 @@ p#before-fetching {
   text-align: center;
 }
 
-section#missions-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 h1#explore-header {
   border-bottom: 1rem solid var(--orange-color);
   border-radius: 0.2rem;
@@ -25,17 +20,64 @@ h1#explore-header {
   padding: 0.5rem;
 }
 
+section#missions-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+div#search-wrapper {
+  position: relative;
+  padding: 0.9375rem;
+  border-radius: 0.2rem;
+  width: 22.625rem;
+  border: 1px solid var(--orange-color);
+  margin: 1.5rem 0 0 0;
+}
+
+div#search-wrapper:focus {
+  border: 3px solid var(--orange-color);
+}
+
+div#search-wrapper::after {
+  content: "🔍";
+  position: absolute;
+  top: 29px;
+  right: 15px;
+}
+
+input#input-search {
+  outline: none;
+  border: 0;
+  padding: 15px 20px;
+  caret-color: var(--orange-color);
+  font-size: 1.1rem;
+}
+
+input#input-search::-webkit-input-placeholder,
+input#input-search:-ms-input-placeholder,
+input#input-search::-ms-input-placeholder,
+input#input-search::placeholder {
+  color: #000000;
+  font-size: 1.1rem;
+  padding-left: 4px;
+}
+
+input#input-search::-webkit-search-cancel-button {
+  display: none;
+}
+
 div#header-background-img {
   height: 50rem;
   background: url("../../assets/images/spacexImage.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--orange-color);
-  border: 1rem solid var(--orange-color);
+  border: 0.4rem solid var(--orange-color);
   border-radius: 0.2rem;
 }
 

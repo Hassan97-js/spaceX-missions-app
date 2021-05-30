@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import GetSpaceXdata from "../../utils/AxiosFunctions";
-import "../ExploreSpaceX/ExploreSpaceX.css";
+import "./SpaceXLaunches.css";
 
-function ExploreSpaceX() {
+function ExploreSpaceX({ isVisited }) {
+  !isVisited && localStorage.setItem("visited", "true");
+
   const [launches, setLaunches] = useState(null);
 
   GetSpaceXdata(useEffect, setLaunches);
@@ -98,9 +100,13 @@ function ExploreSpaceX() {
       ) : (
         <>
           <div id="header-background-img">
-            <h1 id="explore-header">Explore SpaceX Launches 🚀 </h1>
+            <h1 id="explore-header">Explore SpaceX Launches 🚀</h1>
           </div>
+
           <section id="missions-wrapper">
+            <div tabIndex="1" id="search-wrapper">
+              <input id="input-search" type="search" placeholder="Search" />
+            </div>
             <h1>All Missions</h1>
             <div className="grid">{DOMLaunches}</div>
           </section>

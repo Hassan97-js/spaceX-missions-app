@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Navbar.css";
 
 import spaceXlogo from "../../../assets/images/SpaceXLogo2.png";
@@ -6,19 +8,19 @@ function Navbar() {
   return (
     <>
       <nav id="flex-nav">
-        <a href="https://www.google.com">
+        <Link to="/">
           <img src={spaceXlogo} alt="SpaceX logo" id="logo" />
-        </a>
+        </Link>
         <div id="nav-links">
-          <a className="nav-link" href="https://www.google.com">
+          <Link className="nav-link" to="/launches">
             Launches
-          </a>
-          <a className="nav-link" href="https://www.google.com">
+          </Link>
+          <Link className="nav-link" to="/rockets">
             Rockets
-          </a>
-          <a className="nav-link" href="https://www.google.com">
+          </Link>
+          <Link className="nav-link" to="/capsules">
             Capsules
-          </a>
+          </Link>
         </div>
       </nav>
     </>
