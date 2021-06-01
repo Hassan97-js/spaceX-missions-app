@@ -1,15 +1,20 @@
 @import url("../../components/Global/css/Variables.css");
 
-p#before-fetching {
+p#loading,
+p#search-result {
   background: var(--orange-color);
   color: var(--white-color);
   padding: 0.8rem;
   border-bottom: 1rem solid var(--orange-color);
   border-radius: 0.2rem;
-  margin: 0 auto;
   font-size: 5rem;
   font-weight: 600;
   text-align: center;
+  max-width: 400px;
+}
+
+p#loading {
+  margin: 0 auto;
 }
 
 h1#explore-header {
@@ -18,6 +23,10 @@ h1#explore-header {
   font-weight: 900;
   background: var(--white-color);
   padding: 0.5rem;
+}
+
+h1#all-missions {
+  margin: 3rem 0 3rem 0;
 }
 
 section#missions-wrapper {
@@ -29,7 +38,7 @@ div#search-wrapper {
   position: relative;
   padding: 0.9375rem;
   border-radius: 0.2rem;
-  width: 22.625rem;
+  width: 100%;
   border: 1px solid var(--orange-color);
   margin: 1.5rem 0 0 0;
 }
@@ -51,6 +60,7 @@ input#input-search {
   padding: 15px 20px;
   caret-color: var(--orange-color);
   font-size: 1.1rem;
+  width: 98%;
 }
 
 input#input-search::-webkit-input-placeholder,
@@ -81,52 +91,6 @@ div#header-background-img {
   border-radius: 0.2rem;
 }
 
-section div.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  grid-gap: 20px;
-}
-
-div#mission {
-  border-radius: 0.2rem;
-  box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
-  width: 90%;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
-div#mission p,
-p#before-fetching {
-  max-width: 400px;
-}
-
-p.failure-launch,
-p.success-launch,
-p.danger-alert {
-  background: none;
-  width: 200px;
-  text-align: center;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-}
-
-p.failure-launch,
-p.danger-alert {
-  border: 1px solid var(--danger-color);
-  color: var(--danger-color);
-}
-
-p.success-launch {
-  border: 1px solid var(--success-color);
-  color: var(--success-color);
-}
-
-div#image-wrapper {
-  width: 100%;
-}
-
-img#spaceXimage {
-  font-size: 1.5rem;
-  width: 8rem;
-  height: 8rem;
+p#search-result {
+  max-width: 480px;
 }

@@ -1,102 +1,29 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import GetSpaceXdata from "../../utils/AxiosFunctions";
+import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
+
+import getUserInput from "../../utils/EventsHandlers";
+
+import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
+
 import "./SpaceXLaunches.css";
 
-function ExploreSpaceX({ isVisited }) {
+function SpaceXLaunches({ isVisited }) {
   !isVisited && localStorage.setItem("visited", "true");
 
   const [launches, setLaunches] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [searchInput, setSearchInput] = useState("");
 
-  GetSpaceXdata(useEffect, setLaunches);
+  GetSpaceXdata(useEffect, setLaunches, setLoading);
 
-  const DOMLaunches =
-    launches &&
-    launches.map(launch => {
-      const uuid = uuidv4();
-      return (
-        <div id="mission" key={uuid}>
-          <div id="image-wrapper">
-            {launch.links.mission_patch ? (
-              <img
-                id="spaceXimage"
-                src={launch.links.mission_patch}
-                alt="SpaceX mission patch img"
-              />
-            ) : (
-              <p className="danger-alert">Image is not available</p>
-            )}
-          </div>
-          <div id="information-wrapper">
-            <h2>About Mission</h2>
-
-            <p>
-              <span className="highlight-text">Flight number:</span>{" "}
-              {launch.flight_number}
-            </p>
-            <p>
-              <span className="highlight-text">Mission name:</span>{" "}
-              {launch.mission_name}
-            </p>
-            <p>
-              {" "}
-              <span className="highlight-text">Launch year:</span>{" "}
-              {launch.launch_year}
-            </p>
-            <div id="rockets">
-              <h2>About Rocket</h2>
-              <p>
-                {" "}
-                <span className="highlight-text">Rocket name:</span>{" "}
-                {launch.rocket.rocket_name}
-              </p>
-              <p>
-                {" "}
-                <span className="highlight-text">Rocket type:</span>{" "}
-                {launch.rocket.rocket_type}
-              </p>
-            </div>
-            <div id="launch-site">
-              <h2>About Launch</h2>
-              <p>
-                {" "}
-                <span className="highlight-text">Launch site:</span>{" "}
-                {launch.launch_site.site_name_long}
-              </p>
-            </div>
-            <div id="launch-success">
-              {launch.launch_failure_details ? (
-                <div className="launch-failure-details">
-                  <p className="failure-launch">Launch is unsuccessful</p>
-                  <p className="failure-times">
-                    <span className="highlight-text">Failure times:</span>{" "}
-                    Launch has failed{" "}
-                    {launch.launch_failure_details.time + " times."}
-                  </p>
-                  <p className="failure-reason">
-                    <span className="highlight-text">
-                      {" "}
-                      Launch failure reason:{" "}
-                    </span>{" "}
-                    {launch.launch_failure_details.reason}
-                  </p>
-                </div>
-              ) : (
-                <p className="success-launch">
-                  {launch.launch_success} Launch is successful
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
-      );
-    });
+  const filteredLaunches = launches && FilterLaunches(launches, searchInput);
 
   return (
-    <>
-      {!DOMLaunches ? (
-        <p id="before-fetching">Loading...</p>
+    <React.Fragment>
+      {loading ? (
+        <p id="loading">Loading...</p>
       ) : (
         <>
           <div id="header-background-img">
@@ -105,15 +32,55 @@ function ExploreSpaceX({ isVisited }) {
 
           <section id="missions-wrapper">
             <div tabIndex="1" id="search-wrapper">
-              <input id="input-search" type="search" placeholder="Search" />
+              <input
+                onChange={e => {
+                  const userInput = getUserInput(e);
+                  setSearchInput(userInput);
+                }}
+                id="input-search"
+                type="search"
+                placeholder="Search by mission name"
+              />
             </div>
-            <h1>All Missions</h1>
-            <div className="grid">{DOMLaunches}</div>
+
+            <h1 id="all-missions">All Missions</h1>
+
+            {filteredLaunches.length !== 0 ? (
+              <div className="grid">
+                {filteredLaunches.map(launch => {
+                  const uuid = uuidv4();
+                  const isLaunchFailureDetails = launch.launch_failure_details ? launch.launch_failure_details : null;
+                  const isLaunchFailureTimes = launch.launch_failure_details ? launch.launch_failure_details.time : null;
+                  const isLaunchFailureReason = launch.launch_failure_details ? launch.launch_failure_details.reason : null;
+                  return (
+                    <React.Fragment key={uuid}>
+                      <LaunchDetails
+                        missionPatch={launch.links.mission_patch}
+                        flightNumber={launch.flight_number}
+                        missionName={launch.mission_name}
+                        launchYear={launch.launch_year}
+                        rocketName={launch.rocket.rocket_name}
+                        rocketType={launch.rocket.rocket_type}
+                        siteName={launch.launch_site.site_name_long}
+                        launchFailureDetails={isLaunchFailureDetails}
+                        launchFailureTimes={isLaunchFailureTimes}
+                        launchFailureReason={isLaunchFailureReason}
+                        launchSuccess={launch.launch_success}
+                        launchDetailsInfo={launch.details}
+                        launchYoutube={launch.links.video_link}
+                      />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+            ) : (
+              <p id="search-result">No Results!</p>
+            )}
           </section>
         </>
       )}
-    </>
+    </React.Fragment>
   );
 }
 
-export default ExploreSpaceX;
+export default SpaceXLaunches;

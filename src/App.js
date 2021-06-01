@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import { HiddenNav, HiddenFooter } from "./utils/Routers";
 import WelcomeSpaceX from "./views/WelcomeSpaceX/WelcomeSpaceX";
@@ -20,11 +15,7 @@ function App() {
           <HiddenNav />
           <Switch>
             <Route exact path="/">
-              {!isVisited ? (
-                <WelcomeSpaceX isVisited={isVisited} />
-              ) : (
-                <Redirect to="/launches" />
-              )}
+              {!isVisited ? <WelcomeSpaceX isVisited={isVisited} /> : <Redirect to="/launches" />}
             </Route>
             <Route path={"/launches"}>
               <SpaceXLaunches />
