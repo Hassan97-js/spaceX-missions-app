@@ -1,5 +1,3 @@
-@import url("../../components/Global/css/Variables.css");
-
 p#loading,
 p#search-result {
   background: var(--orange-color);

@@ -1,5 +1,3 @@
-@import "../Global/css/Variables.css";
-
 section div.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));

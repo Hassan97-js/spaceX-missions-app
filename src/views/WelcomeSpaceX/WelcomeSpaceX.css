@@ -1,9 +1,3 @@
-@import url("../../components/Global/css/Variables.css");
-
-/* div#WelcomeSpaceX {
-  height: 80vh;
-} */
-
 div#WelcomeSpaceX img#logo {
   width: 20rem;
   margin: 0 auto;

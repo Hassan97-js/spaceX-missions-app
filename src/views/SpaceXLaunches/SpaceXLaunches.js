@@ -10,7 +10,7 @@ import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
 import "./SpaceXLaunches.css";
 
 function SpaceXLaunches({ isVisited }) {
-  !isVisited && localStorage.setItem("visited", "true");
+  /*   !isVisited && localStorage.setItem("visited", "true"); */
 
   const [launches, setLaunches] = useState(null);
   const [loading, setLoading] = useState(true);

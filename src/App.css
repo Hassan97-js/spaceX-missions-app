@@ -1,9 +1,3 @@
-:root {
-  --danger-color: #d64242;
-  --orange-color: #ffa229;
-  --white-color: #fff;
-}
-
 div.App {
   position: relative;
   min-height: 100vh;

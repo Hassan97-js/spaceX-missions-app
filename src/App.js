@@ -7,17 +7,16 @@ import SpaceXLaunches from "./views/SpaceXLaunches/SpaceXLaunches";
 import "./App.css";
 
 function App() {
-  const isVisited = localStorage.getItem("visited");
   return (
     <div className="App">
-      <div className={WelcomeSpaceX && "content-wrap"}>
+      <div className={localStorage.getItem("visited") && "content-wrap"}>
         <Router>
           <HiddenNav />
           <Switch>
             <Route exact path="/">
-              {!isVisited ? <WelcomeSpaceX isVisited={isVisited} /> : <Redirect to="/launches" />}
+              {!localStorage.getItem("visited") ? <WelcomeSpaceX isVisited={localStorage.getItem("visited")} /> : <Redirect to="/launches" />}
             </Route>
-            <Route path={"/launches"}>
+            <Route path="/launches">
               <SpaceXLaunches />
             </Route>
             <Route path="/rockets">{/* <WelcomeSpaceX /> */}</Route>
