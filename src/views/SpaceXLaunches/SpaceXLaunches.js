@@ -9,9 +9,7 @@ import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
 
 import "./SpaceXLaunches.css";
 
-function SpaceXLaunches({ isVisited }) {
-  /*   !isVisited && localStorage.setItem("visited", "true"); */
-
+function SpaceXLaunches() {
   const [launches, setLaunches] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
@@ -39,11 +37,11 @@ function SpaceXLaunches({ isVisited }) {
                 }}
                 id="input-search"
                 type="search"
-                placeholder="Search by mission name"
+                placeholder="Search by mission name and success status"
               />
             </div>
 
-            <h1 id="all-missions">All Missions</h1>
+            <h1 id="all-missions">All Launches</h1>
 
             {filteredLaunches.length !== 0 ? (
               <div className="grid">

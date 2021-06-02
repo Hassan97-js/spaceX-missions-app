@@ -4,7 +4,7 @@ import "./WelcomeSpaceX.css";
 
 import spaceXlogo from "../../assets/images/SpaceXLogo2.png";
 
-function WelcomeSpaceX({ isVisited }) {
+function WelcomeSpaceX({ isVisited, setIsVisited }) {
   return (
     <div id="WelcomeSpaceX">
       <header id="WelcomeSpaceX-header">
@@ -12,8 +12,14 @@ function WelcomeSpaceX({ isVisited }) {
         <h1 id="welcome-header">Welcome to SpaceX!</h1>
       </header>
       <div id="WelcomeSpaceX-background">
-        <h2 id="background-header">For launch, rocket, core, capsule, starlink, launchpad, and landing pad data.</h2>
-        <Link onClick={() => !isVisited && localStorage.setItem("visited", "true")} to="/launches">
+        <h2 id="background-header">For launch, rocket and capsules data.</h2>
+        <Link
+          onClick={() => {
+            !isVisited && localStorage.setItem("visited", "true");
+            setIsVisited(localStorage.getItem("visited"));
+          }}
+          to="/launches"
+        >
           Explore SpaceX
         </Link>
       </div>
