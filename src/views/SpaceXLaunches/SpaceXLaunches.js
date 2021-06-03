@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
+/* import GlobalContext from "../../StateContext/GlobalContext"; */
+
 import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
 
 import getUserInput from "../../utils/EventsHandlers";
-
 import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
 
 import "./SpaceXLaunches.css";
 
-function SpaceXLaunches() {
+function SpaceXLaunches({ contextVisited, setContextVisited }) {
   const [launches, setLaunches] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
@@ -37,7 +38,7 @@ function SpaceXLaunches() {
                 }}
                 id="input-search"
                 type="search"
-                placeholder="Search by mission name and success status"
+                placeholder="Search by mission name or success status"
               />
             </div>
 
