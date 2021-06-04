@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-/* import GlobalContext from "../../StateContext/GlobalContext"; */
-
 import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
 
 import getUserInput from "../../utils/EventsHandlers";
@@ -10,7 +8,7 @@ import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
 
 import "./SpaceXLaunches.css";
 
-function SpaceXLaunches({ contextVisited, setContextVisited }) {
+function SpaceXLaunches() {
   const [launches, setLaunches] = useState(null);
   const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState("");
@@ -42,7 +40,7 @@ function SpaceXLaunches({ contextVisited, setContextVisited }) {
               />
             </div>
 
-            <h1 id="all-missions">All Launches</h1>
+            <h2 id="all-missions">All Launches</h2>
 
             {filteredLaunches.length !== 0 ? (
               <div className="grid">

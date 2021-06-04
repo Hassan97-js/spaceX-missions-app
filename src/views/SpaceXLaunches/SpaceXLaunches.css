@@ -23,8 +23,9 @@ h1#explore-header {
   padding: 0.5rem;
 }
 
-h1#all-missions {
+h2#all-missions {
   margin: 3rem 0 3rem 0;
+  font-size: 4rem;
 }
 
 section#missions-wrapper {

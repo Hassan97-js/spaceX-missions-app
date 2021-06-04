@@ -21,6 +21,10 @@ function Navbar() {
           <Link className="nav-link" to="/capsules">
             Capsules
           </Link>
+          |
+          <Link className="nav-link" to="/loginForm">
+            Login
+          </Link>
         </div>
       </nav>
     </>
