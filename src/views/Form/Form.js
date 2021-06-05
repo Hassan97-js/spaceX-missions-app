@@ -1,19 +1,15 @@
 import { Formik } from "formik";
+import styled from "styled-components";
 
 import { useHistory } from "react-router-dom";
 
-import "./Form.css";
-
-function Form() {
+function Form(props) {
   const history = useHistory();
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
       onSubmit={_values => {
         history.push("/launches");
-        /*  setTimeout(() => { */
-        /* setSubmitting(false); isSubmitting set back to false after handleSubmit get executed! */
-        /*   }, 1000); */
       }}
       validate={values => {
         const errors = {};
@@ -31,7 +27,7 @@ function Form() {
     >
       {({ errors, handleChange, handleSubmit, handleBlur, touched, isSubmitting, dirty, isValid, values }) => {
         return (
-          <form onSubmit={handleSubmit}>
+          <form className={props.className} onSubmit={handleSubmit}>
             <h1 id="login-header">
               <span className="orange">Log</span>in
             </h1>
@@ -54,4 +50,71 @@ function Form() {
   );
 }
 
-export default Form;
+export default styled(Form)`
+  max-width: 500px;
+  height: calc(80vh - 5.5rem);
+  margin: 0 auto;
+
+  span.orange {
+    color: var(--orange-color);
+  }
+
+  input#email,
+  input#pass {
+    font-size: 1rem;
+    font-family: "Lato";
+    color: #333;
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    transition: 0.3s;
+    letter-spacing: 1px;
+  }
+
+  input#email:focus,
+  input#pass:focus {
+    border-color: #818181;
+  }
+
+  span.error {
+    display: block;
+    margin: 0 0 0.8rem 0;
+    color: var(--danger-color);
+  }
+
+  button.btn {
+    background: var(--orange-color);
+    color: var(--white-color);
+    margin-top: 0.5rem;
+    padding: 12px 24px;
+    border: 0 none;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: 2px 0px 10px #e4e4e4;
+    cursor: pointer;
+    transition: all 150ms linear;
+    text-decoration: none;
+  }
+
+  button.btn:hover {
+    transition: all 150ms linear;
+    opacity: 0.85;
+  }
+
+  button.btn:active {
+    transition: all 150ms linear;
+    opacity: 0.75;
+  }
+
+  button.btn:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+  }
+`;
