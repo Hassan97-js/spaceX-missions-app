@@ -1,28 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
+import GlobalContext from "../../StateContext/GlobalContext";
 
 import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
 
 import getUserInput from "../../utils/EventsHandlers";
-import { GetSpaceXdata, FilterLaunches } from "../../utils/Functions";
+import { FilterLaunches, CheckFailureDetails } from "../../utils/Functions";
 
 import "./SpaceXLaunches.css";
 
 function SpaceXLaunches() {
-  const [launches, setLaunches] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { globalSpaceXData, loading } = useContext(GlobalContext);
+
   const [searchInput, setSearchInput] = useState("");
 
-  GetSpaceXdata(useEffect, setLaunches, setLoading);
+  /* globalSpaceXData && console.log("globalSpaceXData", globalSpaceXData); */
 
-  const filteredLaunches = launches && FilterLaunches(launches, searchInput);
+  const filteredLaunches = globalSpaceXData && FilterLaunches(globalSpaceXData, searchInput);
 
   return (
     <React.Fragment>
       {loading ? (
         <p id="loading">Loading...</p>
       ) : (
-        <>
+        <React.Fragment>
           <div id="header-background-img">
             <h1 id="explore-header">Explore SpaceX Launches 🚀</h1>
           </div>
@@ -46,12 +48,14 @@ function SpaceXLaunches() {
               <div className="grid">
                 {filteredLaunches.map(launch => {
                   const uuid = uuidv4();
-                  const isLaunchFailureDetails = launch.launch_failure_details ? launch.launch_failure_details : null;
-                  const isLaunchFailureTimes = launch.launch_failure_details ? launch.launch_failure_details.time : null;
-                  const isLaunchFailureReason = launch.launch_failure_details ? launch.launch_failure_details.reason : null;
+
+                  const isLaunchFailureDetails = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
+                  const isLaunchFailureTimes = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureTimes;
+                  const isLaunchFailureReason = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
                   return (
                     <React.Fragment key={uuid}>
                       <LaunchDetails
+                        launchNumId={launch.launchNumId}
                         missionPatch={launch.links.mission_patch}
                         flightNumber={launch.flight_number}
                         missionName={launch.mission_name}
@@ -63,8 +67,6 @@ function SpaceXLaunches() {
                         launchFailureTimes={isLaunchFailureTimes}
                         launchFailureReason={isLaunchFailureReason}
                         launchSuccess={launch.launch_success}
-                        launchDetailsInfo={launch.details}
-                        launchYoutube={launch.links.video_link}
                       />
                     </React.Fragment>
                   );
@@ -74,7 +76,7 @@ function SpaceXLaunches() {
               <p id="search-result">No Results!</p>
             )}
           </section>
-        </>
+        </React.Fragment>
       )}
     </React.Fragment>
   );

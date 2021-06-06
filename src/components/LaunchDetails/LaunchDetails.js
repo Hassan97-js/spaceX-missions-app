@@ -1,9 +1,12 @@
-import "./LaunchDetails.css";
-import { CapitalizeFirstLetter } from "../../utils/Functions";
-
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
+import { CapitalizeFirstLetter } from "../../utils/Functions";
+
+import "./LaunchDetails.css";
+
 function LaunchDetails({
+  launchNumId,
   missionPatch,
   flightNumber,
   missionName,
@@ -14,17 +17,19 @@ function LaunchDetails({
   launchFailureDetails,
   launchFailureTimes,
   launchFailureReason,
-  launchSuccess,
-  launchDetailsInfo,
-  launchYoutube
+  launchSuccess
 }) {
   const uuid = uuidv4();
   return (
     <div id="mission" key={uuid}>
-      <div id="image-wrapper">
-        {missionPatch ? <img id="spaceXimage" src={missionPatch} alt="SpaceX mission patch img" /> : <p className="danger-alert">Image is not available</p>}
+      <div className="image-wrapper">
+        {missionPatch ? (
+          <img className="spaceXimage" src={missionPatch} alt="SpaceX mission patch img" />
+        ) : (
+          <p className="danger-alert">Image is not available</p>
+        )}
       </div>
-      <div id="information-wrapper">
+      <div className="information-wrapper">
         <h2>About Mission</h2>
 
         <p>
@@ -69,16 +74,10 @@ function LaunchDetails({
           ) : (
             <p className="success-launch">{launchSuccess} Launch is successful</p>
           )}
-          <h2>Launch Details</h2>
-          {launchDetailsInfo ? <p className="launch-details">{launchDetailsInfo}</p> : <p className="danger-alert">Launch details is not available</p>}
-          <h2>Watch the Launch on Youtube</h2>
-          {launchYoutube ? (
-            <a className="youtube-link d-block" href={launchYoutube} target="#">
-              Watch on Youtube
-            </a>
-          ) : (
-            <p className="danger-alert">Launch video is not available</p>
-          )}
+
+          <Link className="learn-more d-block" to={`launchMoreInfo/${launchNumId}`}>
+            Learn more
+          </Link>
         </div>
       </div>
     </div>

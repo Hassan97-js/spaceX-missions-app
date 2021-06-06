@@ -1,18 +1,25 @@
 import axios from "axios";
 
-function GetSpaceXdata(useEffect, setLaunches, setLoading) {
+function GetSpaceXdata(useEffect, setLaunches, setLoading = null) {
   useEffect(() => {
     (async function getSpaceXLaunches() {
       try {
         const response = await axios.get("https://api.spacexdata.com/v3/launches");
         setLaunches(response.data);
-        setLoading(false);
+        setLoading && setLoading(false);
       } catch (err) {
         console.error(err);
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+}
+
+function CheckFailureDetails(failureDetails) {
+  const isLaunchFailureDetails = failureDetails ? failureDetails : null;
+  const isLaunchFailureTimes = failureDetails ? failureDetails.time : null;
+  const isLaunchFailureReason = failureDetails ? failureDetails.reason : null;
+  return { isLaunchFailureDetails, isLaunchFailureTimes, isLaunchFailureReason };
 }
 
 function CheckIfExist(launch, searchString) {
@@ -32,8 +39,16 @@ function FilterLaunches(launches, searchInput) {
   return filteredLaunches;
 }
 
+function FilterOneLaunch(launches, id) {
+  const filteredLaunch = launches.filter(launch => {
+    return launch.launchNumId === Number(id);
+  });
+
+  return filteredLaunch;
+}
+
 function CapitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-export { GetSpaceXdata, FilterLaunches, CapitalizeFirstLetter };
+export { GetSpaceXdata, CheckFailureDetails, FilterLaunches, FilterOneLaunch, CapitalizeFirstLetter };

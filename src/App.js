@@ -7,6 +7,7 @@ import { HiddenNav, HiddenFooter } from "./utils/Routers";
 
 import WelcomeSpaceX from "./views/WelcomeSpaceX/WelcomeSpaceX";
 import SpaceXLaunches from "./views/SpaceXLaunches/SpaceXLaunches";
+import LaunchMoreInfo from "./views/LaunchMoreInfo/LaunchMoreInfo";
 import Form from "./views/Form/Form";
 
 import "./App.css";
@@ -24,6 +25,9 @@ function App() {
               {!isVisited ? <WelcomeSpaceX isVisited={isVisited} setIsVisited={setIsVisited} /> : <Redirect to="/launches" />}
             </Route>
             <Route path="/launches">{isVisited ? <SpaceXLaunches /> : <Redirect to="/" />}</Route>
+            <Route path="/launchMoreInfo/:id">
+              <LaunchMoreInfo />
+            </Route>
             <Route path="/rockets"></Route>
             <Route path="/capsules"></Route>
             <Route path="/loginForm">
