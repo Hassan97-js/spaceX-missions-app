@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import { Helmet } from "react-helmet";
+/* import { Helmet } from "react-helmet"; */
 
 import GlobalContext from "./StateContext/GlobalContext";
 
@@ -13,17 +13,12 @@ import Form from "./views/Form/Form";
 
 import "./App.css";
 
-const spaceXTitle = "SpaceX";
-
 function App() {
   const { isVisited, setIsVisited } = useContext(GlobalContext);
 
   return (
     <div className="App">
       <div className={isVisited && "content-wrap"}>
-        <Helmet>
-          <title>{spaceXTitle}</title>
-        </Helmet>
         <Router>
           <HiddenNav />
           <Switch>
