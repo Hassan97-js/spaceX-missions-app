@@ -2,20 +2,20 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-import GlobalContext from "../../StateContext/GlobalContext";
+import GlobalContext from "../../stateContext/globalContext";
 
-import { FilterOneLaunch, CapitalizeFirstLetter, CheckFailureDetails } from "../../utils/Functions";
+import { filterLaunch, capitalizeFirstLetter, checkFailureDetails } from "../../utils/functions";
 
 function LaunchMoreInfo(props) {
   const { globalSpaceXData } = useContext(GlobalContext);
   const { id } = useParams();
 
-  const matchedLaunch = globalSpaceXData && FilterOneLaunch(globalSpaceXData, id);
+  const matchedLaunch = globalSpaceXData && filterLaunch(globalSpaceXData, id);
   matchedLaunch && console.log(matchedLaunch);
 
-  const failureDetails = matchedLaunch && CheckFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;
-  const failureTimes = matchedLaunch && CheckFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureTimes;
-  const failureReason = matchedLaunch && CheckFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureReason;
+  const failureDetails = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;
+  const failureTimes = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureTimes;
+  const failureReason = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureReason;
 
   return (
     matchedLaunch && (
@@ -66,7 +66,7 @@ function LaunchMoreInfo(props) {
                   <span className="highlight-text">Failure time:</span> Launch has failed at {failureTimes + " seconds"}
                 </p>
                 <p className="failure-reason">
-                  <span className="highlight-text"> Launch failure reason: </span> {CapitalizeFirstLetter(failureReason)}
+                  <span className="highlight-text"> Launch failure reason: </span> {capitalizeFirstLetter(failureReason)}
                 </p>
               </div>
             ) : (

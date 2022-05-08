@@ -2,9 +2,9 @@ import App from "../../../App";
 
 import { useState, useEffect } from "react";
 
-import GlobalContext from "../../../StateContext/GlobalContext";
+import GlobalContext from "../../../stateContext/globalContext";
 
-import { GetSpaceXdata } from "../../../utils/Functions";
+import { getSpaceXdata } from "../../../utils/functions";
 
 function AppParent() {
   const [isVisited, setIsVisited] = useState(localStorage.getItem("visited"));
@@ -13,7 +13,7 @@ function AppParent() {
 
   let launchNumId = 0;
 
-  GetSpaceXdata(useEffect, setGlobalSpaceXData, setLoading);
+  getSpaceXdata(useEffect, setGlobalSpaceXData, setLoading);
 
   globalSpaceXData &&
     globalSpaceXData.forEach(launch => {

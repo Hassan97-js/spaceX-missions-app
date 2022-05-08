@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-import { CapitalizeFirstLetter } from "../../utils/Functions";
+import { capitalizeFirstLetter } from "../../utils/functions";
 
-import "./LaunchDetails.css";
+import "./launchDetails.css";
 
 function LaunchDetails({
   launchNumId,
@@ -23,11 +23,7 @@ function LaunchDetails({
   return (
     <div id="mission" key={uuid}>
       <div className="image-wrapper">
-        {missionPatch ? (
-          <img className="spaceXimage" src={missionPatch} alt="SpaceX mission patch img" />
-        ) : (
-          <p className="danger-alert">Image is not available</p>
-        )}
+        {missionPatch ? <img className="spaceXimage" src={missionPatch} alt="SpaceX mission patch img" /> : <p className="danger-alert">Image is not available</p>}
       </div>
       <div className="information-wrapper">
         <h2>About Mission</h2>
@@ -68,7 +64,7 @@ function LaunchDetails({
                 <span className="highlight-text">Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
               </p>
               <p className="failure-reason">
-                <span className="highlight-text"> Launch failure reason: </span> {CapitalizeFirstLetter(launchFailureReason)}
+                <span className="highlight-text"> Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)}
               </p>
             </div>
           ) : (

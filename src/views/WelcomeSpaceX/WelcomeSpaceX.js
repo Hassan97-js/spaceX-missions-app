@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import "./WelcomeSpaceX.css";
+import "./welcomeSpaceX.css";
 
 import spaceXlogo from "../../assets/images/SpaceXLogo2.png";
 

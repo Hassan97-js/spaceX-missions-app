@@ -1,10 +1,11 @@
 import { withRouter } from "react-router-dom";
 
-import Navbar from "../components/Global/Navbar/Navbar";
-import Footer from "../components/Global/Footer/Footer";
+import Navbar from "../components/global/Navbar/Navbar";
+import Footer from "../components/global/Footer/Footer";
 
-const HideNav = props => {
+const hideNav = (props) => {
   const { location } = props;
+
   if (location.pathname.match(/^\/$/)) {
     return null;
   }
@@ -12,10 +13,11 @@ const HideNav = props => {
   return <Navbar />;
 };
 
-const HiddenNav = withRouter(HideNav);
+export const HiddenNav = withRouter(hideNav);
 
-const HideFooter = props => {
+const HideFooter = (props) => {
   const { location } = props;
+
   if (location.pathname.match(/^\/$/)) {
     return null;
   }
@@ -23,6 +25,4 @@ const HideFooter = props => {
   return <Footer />;
 };
 
-const HiddenFooter = withRouter(HideFooter);
-
-export { HiddenNav, HiddenFooter };
+export const HiddenFooter = withRouter(HideFooter);

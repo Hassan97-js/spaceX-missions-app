@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import GlobalContext from "../../StateContext/GlobalContext";
+import GlobalContext from "../../stateContext/globalContext";
 
 import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
 
-import getUserInput from "../../utils/EventsHandlers";
-import { FilterLaunches, CheckFailureDetails } from "../../utils/Functions";
+import { getUserInput } from "../../utils/eventHandlers";
+import { filterLaunches, checkFailureDetails } from "../../utils/functions";
 
-import "./SpaceXLaunches.css";
+import "./spaceXLaunches.css";
 
 function SpaceXLaunches() {
   const { globalSpaceXData, loading } = useContext(GlobalContext);
@@ -17,7 +17,7 @@ function SpaceXLaunches() {
 
   /* globalSpaceXData && console.log("globalSpaceXData", globalSpaceXData); */
 
-  const filteredLaunches = globalSpaceXData && FilterLaunches(globalSpaceXData, searchInput);
+  const filteredLaunches = globalSpaceXData && filterLaunches(globalSpaceXData, searchInput);
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ function SpaceXLaunches() {
           <section id="missions-wrapper">
             <div tabIndex="1" id="search-wrapper">
               <input
-                onChange={e => {
+                onChange={(e) => {
                   const userInput = getUserInput(e);
                   setSearchInput(userInput);
                 }}
@@ -46,12 +46,12 @@ function SpaceXLaunches() {
 
             {filteredLaunches.length !== 0 ? (
               <div className="grid">
-                {filteredLaunches.map(launch => {
+                {filteredLaunches.map((launch) => {
                   const uuid = uuidv4();
 
-                  const isLaunchFailureDetails = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
-                  const isLaunchFailureTimes = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureTimes;
-                  const isLaunchFailureReason = CheckFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
+                  const isLaunchFailureDetails = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
+                  const isLaunchFailureTimes = checkFailureDetails(launch.launch_failure_details).isLaunchFailureTimes;
+                  const isLaunchFailureReason = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
                   return (
                     <React.Fragment key={uuid}>
                       <LaunchDetails

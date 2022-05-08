@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
-import AppParent from "./components/Global/AppParent/AppParent";
+import AppParent from "./components/global/AppParent/AppParent";
 
 document.title = "SpaceX";
 

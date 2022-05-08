@@ -1,5 +1,3 @@
-function GetUserInput(e) {
+export function getUserInput(e) {
   return e.target.value.trim().toLowerCase();
 }
-
-export default GetUserInput;

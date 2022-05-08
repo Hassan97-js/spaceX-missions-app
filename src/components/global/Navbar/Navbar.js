@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import "./Navbar.css";
+import "./navbar.css";
 
 import spaceXlogo from "../../../assets/images/SpaceXLogo2.png";
 

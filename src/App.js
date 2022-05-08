@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-/* import { Helmet } from "react-helmet"; */
 
-import GlobalContext from "./StateContext/GlobalContext";
+import GlobalContext from "./stateContext/globalContext";
 
-import { HiddenNav, HiddenFooter } from "./utils/Routers";
+import { HiddenNav, HiddenFooter } from "./utils/routers";
 
 import WelcomeSpaceX from "./views/WelcomeSpaceX/WelcomeSpaceX";
 import SpaceXLaunches from "./views/SpaceXLaunches/SpaceXLaunches";

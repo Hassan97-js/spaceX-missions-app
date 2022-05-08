@@ -1,37 +1,37 @@
 import axios from "axios";
 
-function GetSpaceXdata(useEffect, setLaunches, setLoading = null) {
-  useEffect(() => {
+export function getSpaceXdata(spaceXUseEffect, setLaunches, setLoading = null) {
+  spaceXUseEffect(() => {
     (async function getSpaceXLaunches() {
       try {
         const response = await axios.get("https://api.spacexdata.com/v3/launches");
+
         setLaunches(response.data);
         setLoading && setLoading(false);
       } catch (err) {
         console.error(err);
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setLaunches, setLoading]);
 }
 
-function CheckFailureDetails(failureDetails) {
+export function checkFailureDetails(failureDetails) {
   const isLaunchFailureDetails = failureDetails ? failureDetails : null;
   const isLaunchFailureTimes = failureDetails ? failureDetails.time : null;
   const isLaunchFailureReason = failureDetails ? failureDetails.reason : null;
   return { isLaunchFailureDetails, isLaunchFailureTimes, isLaunchFailureReason };
 }
 
-function CheckIfExist(launch, searchString) {
+function checkIfExist(launch, searchString) {
   return searchString !== null && launch.toLowerCase().includes(searchString);
 }
 
-function FilterLaunches(launches, searchInput) {
-  const filteredLaunches = launches.filter(launch => {
+export function filterLaunches(launches, searchInput) {
+  const filteredLaunches = launches.filter((launch) => {
     const isSuccessful = searchInput === "successful" ? "true" : searchInput === "unsuccessful" ? "false" : null;
 
-    const missionName = CheckIfExist(launch.mission_name, searchInput);
-    const launchStatus = CheckIfExist(String(launch.launch_success), isSuccessful);
+    const missionName = checkIfExist(launch.mission_name, searchInput);
+    const launchStatus = checkIfExist(String(launch.launch_success), isSuccessful);
 
     return missionName || launchStatus;
   });
@@ -39,16 +39,14 @@ function FilterLaunches(launches, searchInput) {
   return filteredLaunches;
 }
 
-function FilterOneLaunch(launches, id) {
-  const filteredLaunch = launches.filter(launch => {
+export function filterLaunch(launches, id) {
+  const filteredLaunch = launches.filter((launch) => {
     return launch.launchNumId === Number(id);
   });
 
   return filteredLaunch;
 }
 
-function CapitalizeFirstLetter(string) {
+export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-export { GetSpaceXdata, CheckFailureDetails, FilterLaunches, FilterOneLaunch, CapitalizeFirstLetter };
