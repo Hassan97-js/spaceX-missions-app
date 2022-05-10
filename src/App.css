@@ -3,6 +3,12 @@ div.App {
   min-height: 100vh;
 }
 
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 div.content-wrap {
   padding-bottom: 5.5rem;
 }

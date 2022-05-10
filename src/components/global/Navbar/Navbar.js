@@ -6,28 +6,26 @@ import spaceXlogo from "../../../assets/images/SpaceXLogo2.png";
 
 function Navbar() {
   return (
-    <>
-      <nav id="flex-nav">
-        <Link to="/">
-          <img src={spaceXlogo} alt="SpaceX logo" id="logo" />
+    <nav id="flex-nav">
+      <Link to="/">
+        <img src={spaceXlogo} alt="SpaceX logo" id="logo" />
+      </Link>
+      <div id="nav-links">
+        <Link className="nav-link" to="/launches">
+          Launches
         </Link>
-        <div id="nav-links">
-          <Link className="nav-link" to="/launches">
-            Launches
-          </Link>
-          <Link className="nav-link" to="/rockets">
-            Rockets
-          </Link>
-          <Link className="nav-link" to="/capsules">
-            Capsules
-          </Link>
-          |
-          <Link className="nav-link" to="/loginForm">
-            Login
-          </Link>
-        </div>
-      </nav>
-    </>
+        <Link className="nav-link" to="/rockets">
+          Rockets
+        </Link>
+        <Link className="nav-link" to="/capsules">
+          Capsules
+        </Link>
+
+        <Link className="nav-link" to="/loginForm">
+          Login
+        </Link>
+      </div>
+    </nav>
   );
 }
 

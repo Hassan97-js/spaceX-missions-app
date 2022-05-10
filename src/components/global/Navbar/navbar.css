@@ -1,7 +1,6 @@
 nav#flex-nav {
-  height: 10vh;
-  padding: 1rem;
   display: flex;
+  padding: 1rem;
 }
 
 img#logo {
@@ -20,15 +19,42 @@ div#nav-links {
 }
 
 div#nav-links a.nav-link {
-  border-radius: 0.2rem;
   background: var(--orange-color);
-  color: var(--white-color);
+
   font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white-color);
+
   margin: 0.5rem;
   padding: 0.9rem;
+
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: all 180ms ease-in-out;
 }
 
 div#nav-links a.nav-link:hover {
-  background-color: var(--light-orange-color);
-  transition: 0.2s;
+  background-color: transparent;
+  border-color: var(--orange-color);
+  color: var(--orange-color);
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 53.75em) {
+  nav#flex-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav#flex-nav > * + * {
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 39.375em) {
+  div#nav-links {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

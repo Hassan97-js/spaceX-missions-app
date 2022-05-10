@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState, Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import GlobalContext from "../../stateContext/globalContext";
-
 import LaunchDetails from "../../components/LaunchDetails/LaunchDetails";
+import Spinner from "../../components/global/Spinner/Spinner";
 
 import { getUserInput } from "../../utils/eventHandlers";
 import { filterLaunches, checkFailureDetails } from "../../utils/functions";
@@ -11,22 +11,22 @@ import { filterLaunches, checkFailureDetails } from "../../utils/functions";
 import "./spaceXLaunches.css";
 
 function SpaceXLaunches() {
-  const { globalSpaceXData, loading } = useContext(GlobalContext);
+  const { globalSpaceXLaunches, loading } = useContext(GlobalContext);
 
   const [searchInput, setSearchInput] = useState("");
 
-  /* globalSpaceXData && console.log("globalSpaceXData", globalSpaceXData); */
+  /* globalSpaceXLaunches && console.log("globalSpaceXLaunches", globalSpaceXLaunches); */
 
-  const filteredLaunches = globalSpaceXData && filterLaunches(globalSpaceXData, searchInput);
+  const filteredLaunches = globalSpaceXLaunches && filterLaunches(globalSpaceXLaunches, searchInput);
 
   return (
-    <React.Fragment>
+    <Fragment>
       {loading ? (
-        <p id="loading">Loading...</p>
+        <Spinner />
       ) : (
-        <React.Fragment>
+        <Fragment>
           <div id="header-background-img">
-            <h1 id="explore-header">Explore SpaceX Launches 🚀</h1>
+            <h1 id="explore-header">Explore SpaceX Launches</h1>
           </div>
 
           <section id="missions-wrapper">
@@ -53,7 +53,7 @@ function SpaceXLaunches() {
                   const isLaunchFailureTimes = checkFailureDetails(launch.launch_failure_details).isLaunchFailureTimes;
                   const isLaunchFailureReason = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
                   return (
-                    <React.Fragment key={uuid}>
+                    <Fragment key={uuid}>
                       <LaunchDetails
                         launchNumId={launch.launchNumId}
                         missionPatch={launch.links.mission_patch}
@@ -68,7 +68,7 @@ function SpaceXLaunches() {
                         launchFailureReason={isLaunchFailureReason}
                         launchSuccess={launch.launch_success}
                       />
-                    </React.Fragment>
+                    </Fragment>
                   );
                 })}
               </div>
@@ -76,9 +76,9 @@ function SpaceXLaunches() {
               <p id="search-result">No Results!</p>
             )}
           </section>
-        </React.Fragment>
+        </Fragment>
       )}
-    </React.Fragment>
+    </Fragment>
   );
 }
 

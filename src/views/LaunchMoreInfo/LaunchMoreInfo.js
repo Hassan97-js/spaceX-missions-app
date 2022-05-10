@@ -7,10 +7,10 @@ import GlobalContext from "../../stateContext/globalContext";
 import { filterLaunch, capitalizeFirstLetter, checkFailureDetails } from "../../utils/functions";
 
 function LaunchMoreInfo(props) {
-  const { globalSpaceXData } = useContext(GlobalContext);
+  const { globalSpaceXLaunches } = useContext(GlobalContext);
   const { id } = useParams();
 
-  const matchedLaunch = globalSpaceXData && filterLaunch(globalSpaceXData, id);
+  const matchedLaunch = globalSpaceXLaunches && filterLaunch(globalSpaceXLaunches, id);
   matchedLaunch && console.log(matchedLaunch);
 
   const failureDetails = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;

@@ -1,29 +1,29 @@
-import App from "../../../App";
-
 import { useState, useEffect } from "react";
+
+import App from "../../../App";
 
 import GlobalContext from "../../../stateContext/globalContext";
 
-import { getSpaceXdata } from "../../../utils/functions";
+import { getSpaceXLaunches } from "../../../utils/functions";
 
 function AppParent() {
   const [isVisited, setIsVisited] = useState(localStorage.getItem("visited"));
-  const [globalSpaceXData, setGlobalSpaceXData] = useState(null);
+  const [globalSpaceXLaunches, setGlobalSpaceXLaunches] = useState(null);
   const [loading, setLoading] = useState(true);
 
   let launchNumId = 0;
 
-  getSpaceXdata(useEffect, setGlobalSpaceXData, setLoading);
+  getSpaceXLaunches(useEffect, setGlobalSpaceXLaunches, setLoading);
 
-  globalSpaceXData &&
-    globalSpaceXData.forEach(launch => {
+  globalSpaceXLaunches &&
+    globalSpaceXLaunches.forEach((launch) => {
       launch.launchNumId = ++launchNumId;
     });
 
-  globalSpaceXData && console.log(globalSpaceXData);
+  globalSpaceXLaunches && console.log(globalSpaceXLaunches);
 
   return (
-    <GlobalContext.Provider value={{ isVisited, setIsVisited, globalSpaceXData, setGlobalSpaceXData, loading }}>
+    <GlobalContext.Provider value={{ isVisited, setIsVisited, globalSpaceXLaunches, setGlobalSpaceXLaunches, loading }}>
       <App />
     </GlobalContext.Provider>
   );

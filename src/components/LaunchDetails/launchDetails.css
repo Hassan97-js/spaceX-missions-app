@@ -1,15 +1,20 @@
 section div.grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 1.25em;
+  max-width: 90%;
+  margin: auto;
 }
 
 div#mission {
-  border-radius: 0.2rem;
-  box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
-  width: 90%;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 3px;
   margin-bottom: 1rem;
-  padding: 2rem 1rem 2rem 1rem;
+  padding: 4rem 2rem;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
+  font-size: 1.25rem;
 }
 
 div#mission p {
@@ -19,8 +24,9 @@ div#mission p {
 p.failure-launch,
 p.success-launch,
 p.danger-alert {
-  background: none;
-  width: 200px;
+  background: transparent;
+  font-weight: 700;
+  width: 50%;
   text-align: center;
   padding: 0.5rem;
   border-radius: 0.2rem;
@@ -32,10 +38,10 @@ p.danger-alert {
   color: var(--danger-color);
 }
 
-p.danger-alert {
+/* p.danger-alert {
   width: 240px;
   max-width: 300px;
-}
+} */
 
 p.success-launch {
   border: 1px solid var(--success-color);

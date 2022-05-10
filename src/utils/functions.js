@@ -1,10 +1,12 @@
 import axios from "axios";
 
-export function getSpaceXdata(spaceXUseEffect, setLaunches, setLoading = null) {
-  spaceXUseEffect(() => {
-    (async function getSpaceXLaunches() {
+export function getSpaceXLaunches(launchesUseEffect, setLaunches, setLoading = null) {
+  launchesUseEffect(() => {
+    (async function () {
       try {
         const response = await axios.get("https://api.spacexdata.com/v3/launches");
+
+        /* https://api.spacexdata.com/v4/launches */
 
         setLaunches(response.data);
         setLoading && setLoading(false);

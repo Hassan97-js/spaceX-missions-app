@@ -26,7 +26,7 @@ function LaunchDetails({
         {missionPatch ? <img className="spaceXimage" src={missionPatch} alt="SpaceX mission patch img" /> : <p className="danger-alert">Image is not available</p>}
       </div>
       <div className="information-wrapper">
-        <h2>About Mission</h2>
+        <h3>About Mission</h3>
 
         <p>
           <span className="highlight-text">Flight number:</span> {flightNumber}
@@ -39,7 +39,7 @@ function LaunchDetails({
           <span className="highlight-text">Mission year:</span> {launchYear}
         </p>
         <div id="rockets">
-          <h2>About Rocket</h2>
+          <h3>About Rocket</h3>
           <p>
             {" "}
             <span className="highlight-text">Rocket name:</span> {rocketName}
@@ -50,7 +50,7 @@ function LaunchDetails({
           </p>
         </div>
         <div id="launch-site">
-          <h2>About Launch</h2>
+          <h3>About Launch</h3>
           <p>
             {" "}
             <span className="highlight-text">Launch site:</span> {siteName}
