@@ -1,15 +1,13 @@
-footer#Footer {
-  position: absolute;
-  bottom: 0;
+.footer {
   width: 100%;
-  height: 5.5rem;
+  height: auto;
   font-size: 1.2rem;
   color: var(--black-color);
   display: flex;
   align-items: center;
 }
 
-footer#Footer p#footer-content {
+.footer-content {
   text-align: center;
-  margin: 1.5rem auto;
+  margin: 3rem auto;
 }

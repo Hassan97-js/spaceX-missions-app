@@ -1,5 +1,6 @@
-div.App {
-  position: relative;
+.app-route-container {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -7,8 +8,4 @@ div.App {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-div.content-wrap {
-  padding-bottom: 5.5rem;
 }

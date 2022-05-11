@@ -59,7 +59,7 @@ function LaunchDetails({
         <div id="launch-details">
           {launchFailureDetails ? (
             <div className="launch-failure-details">
-              <p className="failure-launch">Launch is unsuccessful</p>
+              <p className="failure-launch">Unsuccessful</p>
               <p className="failure-times">
                 <span className="highlight-text">Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
               </p>
@@ -68,7 +68,7 @@ function LaunchDetails({
               </p>
             </div>
           ) : (
-            <p className="success-launch">{launchSuccess} Launch is successful</p>
+            <p className="success-launch">{launchSuccess} Successful</p>
           )}
 
           <Link className="learn-more d-block" to={`launchMoreInfo/${launchNumId}`}>

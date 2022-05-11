@@ -21,7 +21,7 @@ function App() {
       {loading ? (
         <Spinner />
       ) : (
-        <div className={isVisited && "content-wrap"}>
+        <div className="app-route-container">
           <Router>
             <HiddenNav />
             <Switch>

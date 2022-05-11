@@ -2,8 +2,8 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <footer id="Footer">
-      <p id="footer-content">Copyright © SpaceX, 2020-2021. All rights reserved.</p>
+    <footer className="footer">
+      <p className="footer-content">Copyright © SpaceX, 2022-2023. All rights reserved.</p>
     </footer>
   );
 }

@@ -1,14 +1,25 @@
 nav#flex-nav {
   display: flex;
-  padding: 1rem;
+  padding: 1.5em 2em;
+  background-color: #fdfdfd;
+  margin-bottom: auto;
+}
+
+.logo-link {
+  text-align: center;
 }
 
 img#logo {
-  width: 20rem;
-  height: 80%;
-  object-fit: contain;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
+  width: 80%;
+}
+
+.logo-caption {
+  font-size: 1.5rem;
+  color: var(--orange-color);
+  font-weight: 600;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.9em;
+  margin-top: 0.5rem;
 }
 
 div#nav-links {
@@ -24,6 +35,7 @@ div#nav-links a.nav-link {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white-color);
+  letter-spacing: 0.11em;
 
   margin: 0.5rem;
   padding: 0.9rem;

@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
-import spaceXlogo from "../../../assets/images/SpaceXLogo2.png";
+import spaceXlogo from "../../../assets/images/SpaceX-Logo 1.png";
 
 function Navbar() {
   return (
     <nav id="flex-nav">
-      <Link to="/">
-        <img src={spaceXlogo} alt="SpaceX logo" id="logo" />
-      </Link>
+      <figure className="logo-wrapper">
+        <Link className="logo-link" to="/">
+          <img id="logo" src={spaceXlogo} alt="SpaceX logo" />
+        </Link>
+        <figcaption className="logo-caption">Galaxy</figcaption>
+      </figure>
+
       <div id="nav-links">
         <Link className="nav-link" to="/launches">
           Launches
