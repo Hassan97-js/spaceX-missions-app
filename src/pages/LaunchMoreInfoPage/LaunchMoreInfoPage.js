@@ -6,7 +6,9 @@ import GlobalContext from "../../stateContext/globalContext";
 
 import { filterLaunch, capitalizeFirstLetter, checkFailureDetails } from "../../utils/functions";
 
-function LaunchMoreInfo(props) {
+import "./launchMoreInfoPage.css";
+
+function LaunchMoreInfoPage(props) {
   const { globalSpaceXLaunches } = useContext(GlobalContext);
   const { id } = useParams();
 
@@ -72,16 +74,12 @@ function LaunchMoreInfo(props) {
             ) : (
               <p className="success-launch">{matchedLaunch[0].launchSuccess} Launch is successful</p>
             )}
-            {/* from here will move to LaunchMoreInfo component*/}
+
             <h2>Launch Details</h2>
-            {matchedLaunch[0].details ? (
-              <p className="launch-details">{matchedLaunch[0].details}</p>
-            ) : (
-              <p className="danger-alert">Launch details is not available</p>
-            )}
+            {matchedLaunch[0].details ? <p className="launch-details">{matchedLaunch[0].details}</p> : <p className="danger-alert">Launch details is not available</p>}
             <h2>Watch the Launch on Youtube</h2>
             {matchedLaunch[0].links.video_link ? (
-              <a className="youtube-link d-block" href={matchedLaunch[0].links.video_link} target="#">
+              <a className="launch-info-link youtube-link" href={matchedLaunch[0].links.video_link} target="#">
                 Watch on Youtube
               </a>
             ) : (
@@ -94,23 +92,23 @@ function LaunchMoreInfo(props) {
   );
 }
 
-export default styled(LaunchMoreInfo)`
+export default styled(LaunchMoreInfoPage)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  height: calc(80vh - 5.5rem);
+  height: 100vh;
 
-  div.learn-more-information-wrapper {
+  .learn-more-information-wrapper {
     padding: 2rem;
   }
 
-  div.learn-more-image-wrapper {
+  .learn-more-image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  img.spaceX-img-big {
+  .spaceX-img-big {
     width: 80%;
   }
 `;

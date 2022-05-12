@@ -1,13 +1,5 @@
-section div.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  column-gap: 2em;
-  margin: auto;
-}
-
-div#mission {
+.launch-info-card {
   width: 100%;
-  max-width: 700px;
   border-radius: 3px;
   margin-bottom: 1rem;
   padding: 4rem 2rem;
@@ -23,18 +15,18 @@ div#mission {
   text-align: center;
 }
 
-div#mission p {
+.launch-info-card p {
   max-width: 400px;
 }
 
-.launch-failure-details,
+.launch-failure-info,
 .success-launch {
   margin: 2.5em 0;
 }
 
-p.failure-launch,
-p.success-launch,
-p.danger-alert {
+.failure-launch,
+.success-launch,
+.danger-alert {
   background: transparent;
   font-weight: 700;
   width: 50%;
@@ -47,53 +39,45 @@ p.danger-alert {
   margin-right: auto;
 }
 
-p.failure-launch,
-p.danger-alert {
+.failure-launch,
+.danger-alert {
   border: 1px solid var(--danger-color);
   color: var(--danger-color);
 }
 
-p.success-launch {
+.success-launch {
   border: 1px solid var(--success-color);
   color: var(--success-color);
 }
 
-div.image-wrapper {
+.image-wrapper {
   width: 100%;
 }
 
-img.spaceXimage {
+.spaceX-image {
   font-size: 1.5rem;
   width: 8rem;
   height: 8rem;
 }
 
-.d-block {
+.launch-info-link {
   display: block;
-}
-
-a.youtube-link {
-  background: var(--danger-color);
-  color: var(--white-color);
-  width: 200px;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  letter-spacing: 0.11em;
-}
-
-a.learn-more {
   width: max-content;
-  background: var(--orange-color);
-  border-radius: 0.2rem;
+  font-weight: 700;
   color: var(--white-color);
   text-align: center;
-  font-weight: 700;
   letter-spacing: 0.11em;
+  border-radius: 0.2rem;
   padding: 1rem 3rem;
+}
 
+.youtube-link {
+  background-color: var(--danger-color);
+  margin-bottom: 1rem;
+}
+
+.learn-more {
+  background-color: var(--orange-color);
   margin-left: auto;
   margin-right: auto;
 }

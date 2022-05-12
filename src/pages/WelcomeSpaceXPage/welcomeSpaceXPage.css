@@ -1,4 +1,4 @@
-div#WelcomeSpaceX img#logo {
+.logo {
   width: 20rem;
   margin: 0 auto;
   object-fit: contain;
@@ -6,7 +6,7 @@ div#WelcomeSpaceX img#logo {
   border-radius: 0.2rem;
 }
 
-header#WelcomeSpaceX-header {
+.welcome-spaceX-page-header {
   padding: 2rem;
   background-color: var(--white-color);
   height: 25vh;
@@ -16,7 +16,7 @@ header#WelcomeSpaceX-header {
   align-items: center;
 }
 
-header#WelcomeSpaceX-header h1#welcome-header {
+.welcome-header {
   background: var(--black-color);
   color: var(--white-color);
   margin: 0;
@@ -24,7 +24,7 @@ header#WelcomeSpaceX-header h1#welcome-header {
   border-radius: 0.2rem;
 }
 
-div#WelcomeSpaceX-background {
+.welcome-spaceX-page-background {
   height: 75vh;
   background: url("./../../assets/images//welcomeSpaceXRcoket.jpg");
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@ div#WelcomeSpaceX-background {
   font-size: 3rem;
 }
 
-div#WelcomeSpaceX-background h2#background-header {
+.background-heading {
   margin-left: 2rem;
   background: var(--orange-color);
   color: var(--white-color);
@@ -46,7 +46,7 @@ div#WelcomeSpaceX-background h2#background-header {
   border-radius: 0.2rem;
 }
 
-div#WelcomeSpaceX-background a {
+.welcome-spaceX-page-link {
   background: var(--white-color);
   padding: 1rem;
   border-radius: 0.2rem;
@@ -54,7 +54,7 @@ div#WelcomeSpaceX-background a {
   transition: background 0.2s;
 }
 
-div#WelcomeSpaceX-background a:hover {
+.welcome-spaceX-page-link:hover {
   background: var(--orange-color);
   padding: 1rem;
   border-radius: 0.2rem;

@@ -5,11 +5,11 @@ import GlobalContext from "./stateContext/globalContext";
 
 import { HiddenNav, HiddenFooter } from "./utils/routers";
 
-import WelcomeSpaceX from "./views/WelcomeSpaceX/WelcomeSpaceX";
+import WelcomeSpaceXPage from "./pages/WelcomeSpaceXPage/WelcomeSpaceXPage";
+import SpaceXLaunchesPage from "./pages/SpaceXLaunchesPage/SpaceXLaunchesPage";
+import LaunchMoreInfoPage from "./pages/LaunchMoreInfoPage/LaunchMoreInfoPage";
 import Spinner from "./components/global/Spinner/Spinner";
-import SpaceXLaunches from "./views/SpaceXLaunches/SpaceXLaunches";
-import LaunchMoreInfo from "./views/LaunchMoreInfo/LaunchMoreInfo";
-import Form from "./views/Form/Form";
+import Form from "./pages/Form/Form";
 
 import "./App.css";
 
@@ -21,27 +21,25 @@ function App() {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="app-route-container">
-          <Router>
-            <HiddenNav />
-            <Switch>
-              <Route exact path="/">
-                {!isVisited ? <WelcomeSpaceX isVisited={isVisited} setIsVisited={setIsVisited} /> : <Redirect to="/launches" />}
-              </Route>
-              <Route path="/launches">{isVisited ? <SpaceXLaunches /> : <Redirect to="/" />}</Route>
-              <Route path="/launchMoreInfo/:id">
-                <LaunchMoreInfo />
-              </Route>
-              <Route path="/rockets"></Route>
-              <Route path="/capsules"></Route>
-              <Route path="/loginForm">
-                <Form />
-              </Route>
-            </Switch>
+        <Router>
+          <HiddenNav />
+          <Switch>
+            <Route exact path="/">
+              {!isVisited ? <WelcomeSpaceXPage isVisited={isVisited} setIsVisited={setIsVisited} /> : <Redirect to="/launches" />}
+            </Route>
+            <Route path="/launches">{isVisited ? <SpaceXLaunchesPage /> : <Redirect to="/" />}</Route>
+            <Route path="/launchMoreInfo/:id">
+              <LaunchMoreInfoPage />
+            </Route>
+            <Route path="/rockets"></Route>
+            <Route path="/capsules"></Route>
+            <Route path="/loginForm">
+              <Form />
+            </Route>
+          </Switch>
 
-            <HiddenFooter />
-          </Router>
-        </div>
+          <HiddenFooter />
+        </Router>
       )}
     </div>
   );

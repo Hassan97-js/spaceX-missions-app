@@ -6,9 +6,11 @@
   box-sizing: border-box;
 }
 
-.App,
-#root {
-  height: 100vh;
+html,
+body,
+#root,
+.App {
+  height: 100%;
 }
 
 body {

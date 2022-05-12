@@ -1,16 +1,18 @@
-nav#flex-nav {
-  display: flex;
+.nav {
   padding: 1.5em 2em;
   background-color: #fdfdfd;
   margin-bottom: auto;
+  display: flex;
+}
+
+.logo {
+  width: 80%;
 }
 
 .logo-link {
-  text-align: center;
-}
-
-img#logo {
-  width: 80%;
+  display: inline-block;
+  width: max-content;
+  height: max-content;
 }
 
 .logo-caption {
@@ -22,14 +24,14 @@ img#logo {
   margin-top: 0.5rem;
 }
 
-div#nav-links {
+.nav-links {
   flex: 2;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-div#nav-links a.nav-link {
+.nav-link {
   background: var(--orange-color);
 
   font-size: 1.4rem;
@@ -45,7 +47,7 @@ div#nav-links a.nav-link {
   transition: all 180ms ease-in-out;
 }
 
-div#nav-links a.nav-link:hover {
+.nav-link:hover {
   background-color: transparent;
   border-color: var(--orange-color);
   color: var(--orange-color);
@@ -53,19 +55,19 @@ div#nav-links a.nav-link:hover {
 }
 
 @media screen and (max-width: 53.75em) {
-  nav#flex-nav {
+  .nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  nav#flex-nav > * + * {
+  .nav > * + * {
     margin-top: 2em;
   }
 }
 
 @media screen and (max-width: 39.375em) {
-  div#nav-links {
+  .nav-links {
     flex-direction: column;
     justify-content: center;
   }
