@@ -9,7 +9,7 @@ function Navbar() {
     <nav className="nav">
       <figure className="logo-wrapper">
         <Link className="logo-link" to="/">
-          <img className="logo" src={spaceXlogo} alt="SpaceX logo" />
+          <img className="nav-logo" src={spaceXlogo} alt="SpaceX logo" />
         </Link>
         <figcaption className="logo-caption">Galaxy</figcaption>
       </figure>
