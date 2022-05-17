@@ -1,22 +1,23 @@
 .launch-info-card {
-  width: 100%;
   border-radius: 3px;
   margin-bottom: 1rem;
-  padding: 4rem 2rem;
+  padding: 4em 2em;
   box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
   font-size: 1.25rem;
   letter-spacing: 0.05em;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
 }
 
 .launch-info-card p {
   max-width: 400px;
+}
+
+.alert-danger {
+  width: 60%;
 }
 
 .launch-failure-info,
@@ -25,24 +26,32 @@
 }
 
 .failure-launch,
+.success-launch {
+  width: 50%;
+}
+
+.failure-launch,
 .success-launch,
-.danger-alert {
+.alert-danger {
   background: transparent;
   font-weight: 700;
-  width: 50%;
   text-align: center;
   letter-spacing: 0.11em;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
+  padding: 0.5em 1.5em;
+  border-radius: 3px;
 
   margin-left: auto;
   margin-right: auto;
 }
 
 .failure-launch,
-.danger-alert {
+.alert-danger {
   border: 1px solid var(--danger-color);
   color: var(--danger-color);
+}
+
+.alert-danger {
+  width: 60%;
 }
 
 .success-launch {
@@ -80,4 +89,11 @@
   background-color: var(--orange-color);
   margin-left: auto;
   margin-right: auto;
+}
+
+@media screen and (max-width: 81.25em) {
+  .launch-info-card {
+    width: 80%;
+    margin: auto;
+  }
 }

@@ -56,7 +56,7 @@
   width: max-content;
 }
 
-.all-launches {
+.all-launches-heading--h2 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -65,17 +65,17 @@
   font-family: "Josefin Sans", sans-serif;
   border-radius: 2px;
   padding: 0.5em 1.5em;
-  margin: 1em 0;
+  margin: 0 auto 5rem auto;
 }
 
-.launches-grid {
+.launches-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   column-gap: 2em;
   margin: auto;
 }
 
-.spaceX-launches-page-wrapper {
+.spaceX-launches-cards-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -127,4 +127,20 @@
 
 .input-search::-webkit-search-cancel-button {
   display: none;
+}
+
+@media screen and (max-width: 87.5em) {
+  .search-wrapper {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 81.25em) {
+  .launches-cards-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 2em;
+  }
 }

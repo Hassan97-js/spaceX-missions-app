@@ -8,8 +8,8 @@ import { getSpaceXLaunches } from "../../../utils/functions";
 
 function AppParent() {
   const [isVisited, setIsVisited] = useState(localStorage.getItem("visited"));
-  const [globalSpaceXLaunches, setGlobalSpaceXLaunches] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [globalSpaceXLaunches, setGlobalSpaceXLaunches] = useState(null);
 
   let launchNumId = 0;
 
@@ -20,7 +20,7 @@ function AppParent() {
       launch.launchNumId = ++launchNumId;
     });
 
-  globalSpaceXLaunches && console.log(globalSpaceXLaunches);
+/*   globalSpaceXLaunches && console.log(globalSpaceXLaunches); */
 
   return (
     <GlobalContext.Provider value={{ isVisited, setIsVisited, globalSpaceXLaunches, setGlobalSpaceXLaunches, loading }}>

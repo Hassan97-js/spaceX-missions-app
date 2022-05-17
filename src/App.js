@@ -11,7 +11,7 @@ import LaunchMoreInfoPage from "./pages/LaunchMoreInfoPage/LaunchMoreInfoPage";
 import Spinner from "./components/global/Spinner/Spinner";
 import Form from "./pages/Form/Form";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const { isVisited, setIsVisited, loading } = useContext(GlobalContext);

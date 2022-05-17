@@ -6,33 +6,36 @@ export function getSpaceXLaunches(launchesUseEffect, setLaunches, setLoading = n
       try {
         const response = await axios.get("https://api.spacexdata.com/v3/launches");
 
+        console.log(response.data);
+
         /* https://api.spacexdata.com/v4/launches */
 
         setLaunches(response.data);
-        setLoading && setLoading(false);
-      } catch (err) {
-        console.error(err);
+        setLoading !== null && setLoading(false);
+      } catch (error) {
+        console.error(error);
       }
     })();
   }, [setLaunches, setLoading]);
 }
 
 export function checkFailureDetails(failureDetails) {
-  const isLaunchFailureDetails = failureDetails ? failureDetails : null;
-  const isLaunchFailureTimes = failureDetails ? failureDetails.time : null;
-  const isLaunchFailureReason = failureDetails ? failureDetails.reason : null;
-  return { isLaunchFailureDetails, isLaunchFailureTimes, isLaunchFailureReason };
+  const isFailureDetailsExist = failureDetails ? failureDetails : null;
+  const isFailureTimeExist = failureDetails ? failureDetails.time : null;
+  const isFailureReasonExist = failureDetails ? failureDetails.reason : null;
+
+  return { isFailureDetailsExist, isFailureTimeExist, isFailureReasonExist };
 }
 
 function checkIfExist(launch, searchString) {
   return searchString !== null && launch.toLowerCase().includes(searchString);
 }
 
-export function filterLaunches(launches, searchInput) {
+export function filterLaunches(launches, searchLaunchesInput) {
   const filteredLaunches = launches.filter((launch) => {
-    const isSuccessful = searchInput === "successful" ? "true" : searchInput === "unsuccessful" ? "false" : null;
+    const isSuccessful = searchLaunchesInput === "successful" ? "true" : searchLaunchesInput === "unsuccessful" ? "false" : null;
 
-    const missionName = checkIfExist(launch.mission_name, searchInput);
+    const missionName = checkIfExist(launch.mission_name, searchLaunchesInput);
     const launchStatus = checkIfExist(String(launch.launch_success), isSuccessful);
 
     return missionName || launchStatus;

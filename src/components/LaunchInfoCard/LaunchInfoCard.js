@@ -24,10 +24,10 @@ function LaunchInfoCard({
   return (
     <div className="launch-info-card" key={uuid}>
       <div className="image-wrapper">
-        {missionPatch ? <img className="spaceX-image" src={missionPatch} alt="SpaceX mission patch img" /> : <p className="danger-alert">Image is not available</p>}
+        {missionPatch ? <img className="spaceX-image" src={missionPatch} alt="SpaceX mission patch img" /> : <p className="alert-danger">Image is not available</p>}
       </div>
       <div className="launch-information-wrapper">
-        <h3>About Mission</h3>
+        <h3 className="about-launch-heading--h3">About Mission</h3>
         <p>
           <span className="about-launch">Flight number:</span> {flightNumber}
         </p>

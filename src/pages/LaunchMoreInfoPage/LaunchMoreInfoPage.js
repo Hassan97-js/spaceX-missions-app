@@ -26,7 +26,7 @@ function LaunchMoreInfoPage(props) {
           {matchedLaunch && matchedLaunch[0].links.mission_patch ? (
             <img className="spaceX-img-big" src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
           ) : (
-            matchedLaunch && matchedLaunch[0].links.mission_patch === null && <p className="danger-alert">Image is not available</p>
+            matchedLaunch && matchedLaunch[0].links.mission_patch === null && <p className="alert-danger">Image is not available</p>
           )}
         </div>
         <div className="learn-more-information-wrapper">
@@ -76,14 +76,14 @@ function LaunchMoreInfoPage(props) {
             )}
 
             <h2>Launch Details</h2>
-            {matchedLaunch[0].details ? <p className="launch-details">{matchedLaunch[0].details}</p> : <p className="danger-alert">Launch details is not available</p>}
+            {matchedLaunch[0].details ? <p className="launch-details">{matchedLaunch[0].details}</p> : <p className="alert-danger">Launch details is not available</p>}
             <h2>Watch the Launch on Youtube</h2>
             {matchedLaunch[0].links.video_link ? (
               <a className="launch-info-link youtube-link" href={matchedLaunch[0].links.video_link} target="#">
                 Watch on Youtube
               </a>
             ) : (
-              <p className="danger-alert">Launch video is not available</p>
+              <p className="alert-danger">Launch video is not available</p>
             )}
           </div>
         </div>

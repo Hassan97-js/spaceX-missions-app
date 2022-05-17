@@ -13,7 +13,7 @@ function WelcomeSpaceXPage({ isVisited, setIsVisited }) {
       </header>
 
       <div className="welcome-spaceX-page-background">
-        <h2 className="background-heading">For launch, rocket and capsules data</h2>
+        <h2 className="welcome-spaceX-background-heading">For launch, rocket and capsules data</h2>
         <Link
           className="welcome-spaceX-page-link"
           onClick={() => {

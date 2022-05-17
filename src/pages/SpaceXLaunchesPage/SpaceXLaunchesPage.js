@@ -10,12 +10,12 @@ import { filterLaunches, checkFailureDetails } from "../../utils/functions";
 
 import "./spaceXLaunchesPage.css";
 
-function SpaceXLaunches() {
+function SpaceXLaunchesPage() {
   const { globalSpaceXLaunches, loading } = useContext(GlobalContext);
 
-  const [searchInput, setSearchInput] = useState("");
+  const [searchLaunchesInput, setSearchLaunchesInput] = useState("");
 
-  const filteredLaunches = globalSpaceXLaunches && filterLaunches(globalSpaceXLaunches, searchInput);
+  const filteredLaunches = globalSpaceXLaunches && filterLaunches(globalSpaceXLaunches, searchLaunchesInput);
 
   return (
     <Fragment>
@@ -29,12 +29,12 @@ function SpaceXLaunches() {
             </div>
           </header>
 
-          <section className="spaceX-launches-page-wrapper">
+          <section className="spaceX-launches-cards-wrapper">
             <div tabIndex="1" className="search-wrapper">
               <input
                 onChange={(e) => {
                   const userInput = getUserInput(e);
-                  setSearchInput(userInput);
+                  setSearchLaunchesInput(userInput);
                 }}
                 className="input-search"
                 type="search"
@@ -42,16 +42,16 @@ function SpaceXLaunches() {
               />
             </div>
 
-            <h2 className="all-launches">All Launches</h2>
+            <h2 className="all-launches-heading--h2">All Launches</h2>
 
             {filteredLaunches.length !== 0 ? (
-              <div className="launches-grid">
+              <div className="launches-cards-grid">
                 {filteredLaunches.map((launch) => {
                   const uuid = uuidv4();
 
-                  const isLaunchFailureDetails = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
-                  const isLaunchFailureTimes = checkFailureDetails(launch.launch_failure_details).isLaunchFailureTimes;
-                  const isLaunchFailureReason = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
+                  const isFailureDetailsExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
+                  const isFailureTimeExist = checkFailureDetails(launch.launch_failure_details).isFailureTimeExist;
+                  const isFailureReasonExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
 
                   return (
                     <Fragment key={uuid}>
@@ -64,9 +64,9 @@ function SpaceXLaunches() {
                         rocketName={launch.rocket.rocket_name}
                         rocketType={launch.rocket.rocket_type}
                         siteName={launch.launch_site.site_name_long}
-                        launchFailureDetails={isLaunchFailureDetails}
-                        launchFailureTimes={isLaunchFailureTimes}
-                        launchFailureReason={isLaunchFailureReason}
+                        launchFailureDetails={isFailureDetailsExist}
+                        launchFailureTimes={isFailureTimeExist}
+                        launchFailureReason={isFailureReasonExist}
                         launchSuccess={launch.launch_success}
                       />
                     </Fragment>
@@ -83,4 +83,4 @@ function SpaceXLaunches() {
   );
 }
 
-export default SpaceXLaunches;
+export default SpaceXLaunchesPage;
