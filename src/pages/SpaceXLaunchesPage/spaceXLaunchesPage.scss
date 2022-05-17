@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .header-background-img {
   position: relative;
 
@@ -9,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--orange-color);
+  color: $orange-color;
 }
 
 .header-background-img::after {
@@ -18,7 +20,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right, var(--orange-color), var(--red-color));
+  background-image: linear-gradient(to right, $orange-color, $red-color);
   opacity: 0.25;
   z-index: 1;
 }
@@ -31,12 +33,12 @@
 .explore-header {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
-  color: var(--red-color);
+  color: $red-color;
 
   padding: 2rem 3rem;
   margin: 0;
 
-  background-image: linear-gradient(to right, var(--orange-color), var(--red-color));
+  background-image: linear-gradient(to right, $orange-color, $red-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -45,7 +47,7 @@
 }
 
 .search-result {
-  color: var(--orange-color);
+  color: $orange-color;
   border: 2px solid;
   padding: 1.3rem 2rem 1rem 2rem;
   font-size: 3rem;
@@ -60,8 +62,8 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  background-color: var(--orange-color);
-  color: var(--white-color);
+  background-color: $orange-color;
+  color: $white-color;
   font-family: "Josefin Sans", sans-serif;
   border-radius: 2px;
   padding: 0.5em 1.5em;
@@ -85,13 +87,13 @@
   padding: 0.9375rem;
   border-radius: 0.2em;
   width: 100%;
-  border: 2px solid var(--orange-color);
+  border: 2px solid $orange-color;
   margin-top: 6rem;
   margin-bottom: 6rem;
 }
 
 .search-wrapper:focus {
-  border: 3px solid var(--orange-color);
+  border: 3px solid $orange-color;
 }
 
 .search-wrapper::after {
@@ -105,7 +107,7 @@
   outline: none;
   border: 0;
   padding: 15px 20px;
-  caret-color: var(--orange-color);
+  caret-color: $orange-color;
   font-size: 1.1rem;
   width: 98%;
 }

@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
 
 import GlobalContext from "../../stateContext/globalContext";
 
 import { filterLaunch, capitalizeFirstLetter, checkFailureDetails } from "../../utils/functions";
 
-import "./launchMoreInfoPage.css";
+import "./launchMoreInfoPage.scss";
 
 function LaunchMoreInfoPage(props) {
   const { globalSpaceXLaunches } = useContext(GlobalContext);
@@ -21,7 +20,7 @@ function LaunchMoreInfoPage(props) {
 
   return (
     matchedLaunch && (
-      <div className={props.className}>
+      <div className="launch-more-info-page">
         <div className="learn-more-image-wrapper">
           {matchedLaunch && matchedLaunch[0].links.mission_patch ? (
             <img className="spaceX-img-big" src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
@@ -92,23 +91,4 @@ function LaunchMoreInfoPage(props) {
   );
 }
 
-export default styled(LaunchMoreInfoPage)`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-  height: 100vh;
-
-  .learn-more-information-wrapper {
-    padding: 2rem;
-  }
-
-  .learn-more-image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .spaceX-img-big {
-    width: 80%;
-  }
-`;
+export default LaunchMoreInfoPage;

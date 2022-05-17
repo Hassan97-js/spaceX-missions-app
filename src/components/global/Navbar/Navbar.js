@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import spaceXlogo from "../../../assets/images/SpaceX-Logo 1.png";
 
-import "./navbar.css";
+import "./navbar.scss";
 
 function Navbar() {
   return (
@@ -25,9 +25,9 @@ function Navbar() {
           Capsules
         </Link>
 
-        <Link className="nav-link" to="/loginForm">
+        {/*<Link className="nav-link" to="/loginForm">
           Login
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

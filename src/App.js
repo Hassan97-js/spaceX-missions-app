@@ -9,9 +9,9 @@ import WelcomeSpaceXPage from "./pages/WelcomeSpaceXPage/WelcomeSpaceXPage";
 import SpaceXLaunchesPage from "./pages/SpaceXLaunchesPage/SpaceXLaunchesPage";
 import LaunchMoreInfoPage from "./pages/LaunchMoreInfoPage/LaunchMoreInfoPage";
 import Spinner from "./components/global/Spinner/Spinner";
-import Form from "./pages/Form/Form";
+/* import Form from "./pages/Form/Form"; */
 
-import "./App.scss";
+import "./styles/styles.scss";
 
 function App() {
   const { isVisited, setIsVisited, loading } = useContext(GlobalContext);
@@ -33,9 +33,9 @@ function App() {
             </Route>
             <Route path="/rockets"></Route>
             <Route path="/capsules"></Route>
-            <Route path="/loginForm">
+            {/*  <Route path="/loginForm">
               <Form />
-            </Route>
+            </Route> */}
           </Switch>
 
           <HiddenFooter />

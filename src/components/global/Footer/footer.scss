@@ -1,8 +1,10 @@
+@use "../../../styles/" as *;
+
 .footer {
   width: 100%;
   height: auto;
   font-size: 1.2rem;
-  color: var(--black-color);
+  color: $black-color;
   display: flex;
   align-items: center;
 }

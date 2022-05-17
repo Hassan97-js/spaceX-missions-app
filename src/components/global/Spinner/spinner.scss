@@ -1,18 +1,9 @@
-:root {
-  --hue: 223;
-  --bg: hsl(var(--hue), 10%, 90%);
-  --fg: hsl(var(--hue), 10%, 10%);
-  --themeTrans: 0.3s;
-}
+@use "../../../styles/" as *;
 
-/*
-Color Scheme:
-  color: hsl(223, 10%, 90%);
-  color: hsl(223, 10%, 10%);
-
-  color: hsl(33,90%,55%);
-  color: hsl(3,90%,55%);
-*/
+$hue: 223;
+$bg: hsl($hue, 10%, 90%);
+$fg: hsl($hue, 10%, 10%);
+$themeTrans: 0.3s;
 
 .spinner {
   width: 5em;
@@ -29,8 +20,8 @@ Color Scheme:
 }
 
 .spinner__ring {
-  stroke: hsla(var(--hue), 10%, 10%, 0.1);
-  transition: stroke var(--themeTrans);
+  stroke: hsla($hue, 10%, 10%, 0.1);
+  transition: stroke $themeTrans;
 }
 
 .spinner__worm1 {

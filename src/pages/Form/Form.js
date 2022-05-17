@@ -8,10 +8,10 @@ function Form(props) {
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={_values => {
+      onSubmit={(_values) => {
         history.push("/launches");
       }}
-      validate={values => {
+      validate={(values) => {
         const errors = {};
 
         if (values.email.trim() === "") {
@@ -56,7 +56,7 @@ export default styled(Form)`
   margin: 0 auto;
 
   span.orange {
-    color: var(--orange-color);
+    color: $orange-color;
   }
 
   input#email,
@@ -82,12 +82,12 @@ export default styled(Form)`
   span.error {
     display: block;
     margin: 0 0 0.8rem 0;
-    color: var(--danger-color);
+    color: $danger-color;
   }
 
   button.btn {
-    background: var(--orange-color);
-    color: var(--white-color);
+    background: $orange-color;
+    color: $white-color;
     margin-top: 0.5rem;
     padding: 12px 24px;
     border: 0 none;

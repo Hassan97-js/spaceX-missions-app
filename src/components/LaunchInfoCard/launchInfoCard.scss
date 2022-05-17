@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .launch-info-card {
   border-radius: 3px;
   margin-bottom: 1rem;
@@ -46,8 +48,8 @@
 
 .failure-launch,
 .alert-danger {
-  border: 1px solid var(--danger-color);
-  color: var(--danger-color);
+  border: 1px solid $danger-color;
+  color: $danger-color;
 }
 
 .alert-danger {
@@ -55,8 +57,8 @@
 }
 
 .success-launch {
-  border: 1px solid var(--success-color);
-  color: var(--success-color);
+  border: 1px solid $success-color;
+  color: $success-color;
 }
 
 .image-wrapper {
@@ -73,7 +75,7 @@
   display: block;
   width: max-content;
   font-weight: 700;
-  color: var(--white-color);
+  color: $white-color;
   text-align: center;
   letter-spacing: 0.11em;
   border-radius: 0.2rem;
@@ -81,12 +83,12 @@
 }
 
 .youtube-link {
-  background-color: var(--danger-color);
+  background-color: $danger-color;
   margin-bottom: 1rem;
 }
 
 .learn-more {
-  background-color: var(--orange-color);
+  background-color: $orange-color;
   margin-left: auto;
   margin-right: auto;
 }

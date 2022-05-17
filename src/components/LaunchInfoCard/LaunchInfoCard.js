@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { capitalizeFirstLetter } from "../../utils/functions";
 
-import "./launchInfoCard.css";
+import "./launchInfoCard.scss";
 
 function LaunchInfoCard({
   launchNumId,

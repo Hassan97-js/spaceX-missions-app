@@ -8,7 +8,7 @@ import Spinner from "../../components/global/Spinner/Spinner";
 import { getUserInput } from "../../utils/eventHandlers";
 import { filterLaunches, checkFailureDetails } from "../../utils/functions";
 
-import "./spaceXLaunchesPage.css";
+import "./spaceXLaunchesPage.scss";
 
 function SpaceXLaunchesPage() {
   const { globalSpaceXLaunches, loading } = useContext(GlobalContext);

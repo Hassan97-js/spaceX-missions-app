@@ -1,3 +1,5 @@
+@use "../../../styles/" as *;
+
 .nav {
   padding: 1.5em 2em;
   background-color: #fdfdfd;
@@ -17,7 +19,7 @@
 
 .logo-caption {
   font-size: 1.5rem;
-  color: var(--orange-color);
+  color: $orange-color;
   font-weight: 600;
   font-family: "Josefin Sans", sans-serif;
   letter-spacing: 0.9em;
@@ -32,11 +34,11 @@
 }
 
 .nav-link {
-  background: var(--orange-color);
+  background: $orange-color;
 
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--white-color);
+  color: $white-color;
   letter-spacing: 0.11em;
 
   margin: 0.5rem;
@@ -49,8 +51,8 @@
 
 .nav-link:hover {
   background-color: transparent;
-  border-color: var(--orange-color);
-  color: var(--orange-color);
+  border-color: $orange-color;
+  color: $orange-color;
   opacity: 0.8;
 }
 

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import "./welcomeSpaceXPage.css";
-
 import spaceXlogo from "../../assets/images/SpaceXLogo2.png";
+
+import "./welcomeSpaceXPage.scss";
 
 function WelcomeSpaceXPage({ isVisited, setIsVisited }) {
   return (

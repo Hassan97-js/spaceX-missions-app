@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  column-gap: 2em;
+  margin: auto;
+}
+
+.launch-more-info-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+
+.learn-more-information-wrapper {
+  padding: 2em;
+}
+
+.learn-more-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spaceX-img-big {
+  width: 70%;
+}
