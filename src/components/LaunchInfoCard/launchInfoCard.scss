@@ -32,33 +32,8 @@
   width: 50%;
 }
 
-.failure-launch,
-.success-launch,
-.alert-danger {
-  background: transparent;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.11em;
-  padding: 0.5em 1.5em;
-  border-radius: 3px;
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.failure-launch,
-.alert-danger {
-  border: 1px solid $danger-color;
-  color: $danger-color;
-}
-
-.alert-danger {
+.image-not-available {
   width: 60%;
-}
-
-.success-launch {
-  border: 1px solid $success-color;
-  color: $success-color;
 }
 
 .image-wrapper {

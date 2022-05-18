@@ -17,7 +17,7 @@ function App() {
   const { isVisited, setIsVisited, loading } = useContext(GlobalContext);
 
   return (
-    <div className={`App ${loading ? "loading" : ""}`}>
+    <div className={`App ${loading ? "d-flex flex-jc-ai-center" : ""}`}>
       {loading ? (
         <Spinner />
       ) : (

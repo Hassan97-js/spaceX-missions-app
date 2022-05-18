@@ -1,5 +1,51 @@
-.loading {
+@use "../abstracts/colors" as *;
+
+.d-flex {
   display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.felx-jc-center {
+  justify-content: center;
+}
+
+.flex-ai-center {
+  align-items: center;
+}
+
+.flex-jc-ai-center {
   justify-content: center;
   align-items: center;
+}
+
+.success,
+.failure,
+.alert-danger {
+  background: transparent;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.11em;
+  padding: 0.5em 1.5em;
+  border-radius: 3px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success {
+  border: 1px solid $success-color;
+  color: $success-color;
+}
+
+.failure-launch,
+.alert-danger {
+  border: 1px solid $danger-color;
+  color: $danger-color;
 }

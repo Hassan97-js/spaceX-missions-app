@@ -49,9 +49,9 @@ function SpaceXLaunchesPage() {
                 {filteredLaunches.map((launch) => {
                   const uuid = uuidv4();
 
-                  const isFailureDetailsExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
+                  /* const isFailureDetailsExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
                   const isFailureTimeExist = checkFailureDetails(launch.launch_failure_details).isFailureTimeExist;
-                  const isFailureReasonExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason;
+                  const isFailureReasonExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason; */
 
                   return (
                     <Fragment key={uuid}>
@@ -64,9 +64,9 @@ function SpaceXLaunchesPage() {
                         rocketName={launch.rocket.rocket_name}
                         rocketType={launch.rocket.rocket_type}
                         siteName={launch.launch_site.site_name_long}
-                        launchFailureDetails={isFailureDetailsExist}
-                        launchFailureTimes={isFailureTimeExist}
-                        launchFailureReason={isFailureReasonExist}
+                        launchFailureDetails={launch.launch_failure_details && launch.launch_failure_details}
+                        launchFailureTimes={launch.launch_failure_details && launch.launch_failure_details.time}
+                        launchFailureReason={launch.launch_failure_details && launch.launch_failure_details.reason}
                         launchSuccess={launch.launch_success}
                       />
                     </Fragment>

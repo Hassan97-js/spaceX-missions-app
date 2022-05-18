@@ -1,0 +1,267 @@
+@-webkit-keyframes worm1 {
+  from {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dashoffset: 43.98;
+  }
+
+  12.5% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    stroke-dashoffset: -131.95;
+  }
+
+  25% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dashoffset: 0;
+  }
+
+  37.5%,
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dashoffset: -175.93;
+  }
+
+  62.5% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    stroke-dashoffset: 0;
+  }
+
+  75% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dashoffset: -131.95;
+  }
+
+  87.5%,
+  to {
+    stroke-dashoffset: 43.98;
+  }
+}
+
+@keyframes worm1 {
+  from {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dashoffset: 43.98;
+  }
+
+  12.5% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    stroke-dashoffset: -131.95;
+  }
+
+  25% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dashoffset: 0;
+  }
+
+  37.5%,
+  50% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dashoffset: -175.93;
+  }
+
+  62.5% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    stroke-dashoffset: 0;
+  }
+
+  75% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dashoffset: -131.95;
+  }
+
+  87.5%,
+  to {
+    stroke-dashoffset: 43.98;
+  }
+}
+
+@-webkit-keyframes worm2 {
+  from,
+  35.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 40 0 44;
+    visibility: hidden;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  37.5% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dasharray: 0 40 44 0;
+    visibility: visible;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  47.5% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -80px) rotate(360deg);
+  }
+
+  50% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(360deg);
+  }
+
+  52.5%,
+  to {
+    stroke-dasharray: 0 42 0 42;
+    visibility: hidden;
+    transform: translate(0, 12px) rotate(360deg);
+  }
+}
+
+@keyframes worm2 {
+  from,
+  35.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 40 0 44;
+    visibility: hidden;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  37.5% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dasharray: 0 40 44 0;
+    visibility: visible;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  47.5% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -80px) rotate(360deg);
+  }
+
+  50% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(360deg);
+  }
+
+  52.5%,
+  to {
+    stroke-dasharray: 0 42 0 42;
+    visibility: hidden;
+    transform: translate(0, 12px) rotate(360deg);
+  }
+}
+
+@-webkit-keyframes worm3 {
+  from {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(0);
+  }
+
+  2.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 42 0 42;
+    visibility: hidden;
+    transform: translate(0, 12px) rotate(0);
+  }
+
+  85.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 40 0 44;
+    visibility: hidden;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  87.5% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dasharray: 0 40 44 0;
+    visibility: visible;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  97.5% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -80px) rotate(-360deg);
+  }
+
+  to {
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(-360deg);
+  }
+}
+
+@keyframes worm3 {
+  from {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(0);
+  }
+
+  2.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 42 0 42;
+    visibility: hidden;
+    transform: translate(0, 12px) rotate(0);
+  }
+
+  85.5% {
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    stroke-dasharray: 0 40 0 44;
+    visibility: hidden;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  87.5% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    stroke-dasharray: 0 40 44 0;
+    visibility: visible;
+    transform: translate(0, 0) rotate(0);
+  }
+
+  97.5% {
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -80px) rotate(-360deg);
+  }
+
+  to {
+    stroke-dasharray: 0 4 40 40;
+    visibility: visible;
+    transform: translate(0, -36px) rotate(-360deg);
+  }
+}
