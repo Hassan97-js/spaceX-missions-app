@@ -1,3 +1,5 @@
+@use "../../styles/" as *;
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
@@ -23,4 +25,47 @@
 
 .spaceX-img-big {
   width: 70%;
+}
+
+.launch-info-link {
+  display: block;
+
+  width: max-content;
+  padding: 1rem 3rem;
+
+  color: $white-color;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.11em;
+
+  border-radius: 2px;
+}
+
+.youtube-link {
+  background-color: $danger-color;
+}
+
+.success,
+.failure,
+.alert-danger {
+  background: transparent;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.11em;
+  padding: 0.5em 1.5em;
+  border-radius: 3px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success {
+  border: 1px solid $success-color;
+  color: $success-color;
+}
+
+.failure-launch,
+.alert-danger {
+  border: 1px solid $danger-color;
+  color: $danger-color;
 }

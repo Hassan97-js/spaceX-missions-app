@@ -1,25 +1,24 @@
 @use "../../styles/" as *;
 
 .launch-info-card {
-  border-radius: 3px;
-  margin-bottom: 1rem;
-  padding: 4em 2em;
-  box-shadow: 5px 5px 10px rgba(39, 39, 39, 0.3);
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
   text-align: center;
+
+  margin-bottom: 1rem;
+  padding: 4em 2em;
+
+  box-shadow: 0 5px 20px rgba(39, 39, 39, 0.2);
+  border-radius: 3px;
 }
 
 .launch-info-card p {
   max-width: 400px;
-}
-
-.alert-danger {
-  width: 60%;
 }
 
 .launch-failure-info,
@@ -41,31 +40,32 @@
 }
 
 .spaceX-image {
-  font-size: 1.5rem;
-  width: 8rem;
-  height: 8rem;
+  width: 80%;
+  max-width: 300px;
 }
 
 .launch-info-link {
   display: block;
+
   width: max-content;
-  font-weight: 700;
+  padding: 1rem 3rem;
+
   color: $white-color;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 0.11em;
-  border-radius: 0.2rem;
-  padding: 1rem 3rem;
+
+  border-radius: 2px;
 }
 
 .youtube-link {
   background-color: $danger-color;
-  margin-bottom: 1rem;
 }
 
 .learn-more {
-  background-color: $orange-color;
   margin-left: auto;
   margin-right: auto;
+  background-color: $orange-color;
 }
 
 @media screen and (max-width: 81.25em) {

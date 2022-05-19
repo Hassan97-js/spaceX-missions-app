@@ -14,7 +14,6 @@ function LaunchInfoCard({
   rocketName,
   rocketType,
   siteName,
-  launchFailureDetails,
   launchFailureTimes,
   launchFailureReason,
   launchSuccess
@@ -42,28 +41,32 @@ function LaunchInfoCard({
           <span className="about-launch--mission-year about-launch">Mission year:</span> {launchYear}
         </p>
         <div className="rockets">
-          <h3>About Rocket</h3>
+          <h3 className="rockets-heading--h3">About Rocket</h3>
           <p>
-            <span className="about-launch">Rocket name:</span> {rocketName}
+            <span className="about-rocket">Rocket name:</span> {rocketName}
           </p>
           <p>
-            <span className="about-launch">Rocket type:</span> {rocketType}
+            <span className="about-rocket">Rocket type:</span> {rocketType}
           </p>
         </div>
         <div className="launch-site">
-          <h3>About Launch</h3>
+          <h3 className="launch-site-heading--h3">About Launch</h3>
           <p>
-            <span className="about-launch">Launch site:</span> {siteName}
+            <span className="about-launch-site">Launch site:</span> {siteName}
           </p>
         </div>
         <div className="launch-info">
           {!launchSuccess ? (
             <div className="launch-failure-info">
               <p className="failure failure-launch">Unsuccessful</p>
+
               <p className="failure-times">
                 <span className="about-launch">Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
               </p>
-              <p className="failure-reason">{/*  <span className="about-launch">Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)} */}</p>
+
+              <p className="failure-reason">
+                <span className="about-launch">Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)}
+              </p>
             </div>
           ) : (
             <p className="success success-launch">{launchSuccess} Successful</p>

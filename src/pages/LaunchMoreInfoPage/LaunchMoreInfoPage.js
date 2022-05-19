@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import GlobalContext from "../../stateContext/globalContext";
 
-import { filterLaunch, capitalizeFirstLetter, checkFailureDetails } from "../../utils/functions";
+import { filterLaunch, capitalizeFirstLetter } from "../../utils/functions";
 
 import styles from "./launchMoreInfoPage.module.scss";
 
@@ -13,10 +13,10 @@ function LaunchMoreInfoPage() {
 
   const matchedLaunch = globalSpaceXLaunches && filterLaunch(globalSpaceXLaunches, id);
 
-  const failureDetails = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;
+  /* const failureDetails = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;
   const failureTimes = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureTimes;
   const failureReason = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureReason;
-
+ */
   return (
     matchedLaunch && (
       <div className={styles["launch-more-info-page"]}>
@@ -56,15 +56,16 @@ function LaunchMoreInfoPage() {
               <span className={styles["about-launch--launch-site about-launch"]}>Launch site:</span> {matchedLaunch[0].launch_site.site_name_long}
             </p>
           </div>
+
           <div className={styles["launch-details"]}>
-            {failureDetails ? (
+            {!matchedLaunch.launch_success ? (
               <div className={styles["launch-failure-details"]}>
-                <p className={styles["failure-launch"]}>Launch is unsuccessful</p>
+                <p className={styles["failure-launch failure"]}>Launch is unsuccessful</p>
                 <p className={styles["failure-times"]}>
-                  <span className={styles["about-launch--failure-time about-launch"]}>Failure time:</span> Launch has failed at {failureTimes + " seconds"}
+                  <span className={styles["about-launch--failure-time about-launch"]}>Failure time:</span> Launch has failed at {matchedLaunch.failureTimes + " seconds"}
                 </p>
                 <p className={styles["failure-reason"]}>
-                  <span className={styles["about-launch--failure-reason about-launch"]}> Launch failure reason: </span> {capitalizeFirstLetter(failureReason)}
+                  <span className={styles["about-launch--failure-reason about-launch"]}> Launch failure reason: </span> {capitalizeFirstLetter(matchedLaunch.failureReason)}
                 </p>
               </div>
             ) : (
