@@ -24,12 +24,12 @@ function SpaceXLaunchesPage() {
       ) : (
         <main className="spaceX-launches-page">
           <header className="header-background-img">
-            <div className="explore-header-background">
+            <div className="explore-header-background container">
               <h1 className="explore-header">Explore SpaceX Launches</h1>
             </div>
           </header>
 
-          <section className="spaceX-launches-cards-wrapper">
+          <section className="spaceX-launches-cards-wrapper container">
             <div tabIndex="1" className="search-wrapper">
               <input
                 onChange={(e) => {

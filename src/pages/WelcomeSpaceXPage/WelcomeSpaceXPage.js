@@ -7,7 +7,7 @@ import "./welcomeSpaceXPage.scss";
 function WelcomeSpaceXPage({ isVisited, setIsVisited }) {
   return (
     <div className="welcome-spaceX-page">
-      <header className="welcome-spaceX-page-header">
+      <header className="welcome-spaceX-page-header container">
         <img src={spaceXlogo} alt="SpaceX logo" className="welcome-spaceX-page-logo" />
         <h1 className="welcome-heading">Welcome to SpaceX Galaxy</h1>
       </header>

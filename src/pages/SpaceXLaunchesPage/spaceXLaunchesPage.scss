@@ -1,5 +1,11 @@
 @use "../../styles/" as *;
 
+.launches-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  column-gap: 2em;
+}
+
 .header-background-img {
   position: relative;
 
@@ -31,12 +37,13 @@
 }
 
 .explore-header {
+  padding: 2rem 3rem;
+  margin: 0;
+
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   color: $red-color;
-
-  padding: 2rem 3rem;
-  margin: 0;
+  text-align: center;
 
   background-image: linear-gradient(to right, $orange-color, $red-color);
   background-clip: text;
@@ -59,9 +66,8 @@
 }
 
 .all-launches-heading--h2 {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 85%;
+  max-width: 490px;
   background-color: $orange-color;
   color: $white-color;
   font-family: "Josefin Sans", sans-serif;
@@ -70,26 +76,16 @@
   margin: 0 auto 5rem auto;
 }
 
-.launches-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  column-gap: 2em;
-  margin: auto;
-}
-
-.spaceX-launches-cards-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .search-wrapper {
   position: relative;
-  padding: 0.9375rem;
-  border-radius: 0.2em;
+
   width: 100%;
+  max-width: 800px;
+  padding: 0.9375rem;
   border: 2px solid $orange-color;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin: 6rem auto 6rem auto;
+
+  border-radius: 0.2em;
 }
 
 .search-wrapper:focus {
@@ -133,7 +129,6 @@
 
 @media screen and (max-width: 87.5em) {
   .search-wrapper {
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 html,
 body,
 #root,
@@ -23,4 +27,34 @@ body {
 img {
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 55%;
+  }
 }

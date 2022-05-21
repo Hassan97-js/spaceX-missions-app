@@ -13,31 +13,16 @@ function LaunchMoreInfoPage() {
 
   const matchedLaunch = globalSpaceXLaunches && filterLaunch(globalSpaceXLaunches, id);
 
-  /* const failureDetails = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureDetails;
-  const failureTimes = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureTimes;
-  const failureReason = matchedLaunch && checkFailureDetails(matchedLaunch[0].launch_failure_details).isLaunchFailureReason;
- */
-
-  console.log(matchedLaunch[0].launch_success);
-
   return (
     matchedLaunch && (
-      <div className={styles["launch-more-info-page"]}>
+      <div className={`${styles["launch-more-info-page"]}`}>
         <div className={styles["learn-more-image-wrapper"]}>
           {matchedLaunch[0].links.mission_patch ? (
-            <img className={styles["spaceX-img-big"]} src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
+            <img className={styles["spaceX-img"]} src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
           ) : (
             matchedLaunch[0].links.mission_patch === null && <p className={styles["alert-danger"]}>Image is not available</p>
           )}
         </div>
-
-        {/**
-         * BUGS:
-         *
-         * FIX SUCCESSFUL AND UNSUCCESSFUL FEATURE [FIXED]
-         * FIX CSS MODULES MULTIPALE CSS CLASSES BUG [FIXED]
-         *
-         * */}
 
         <div className={styles["learn-more-information-wrapper"]}>
           <h2 className={styles["learn-more-heading-h2"]}>About Mission</h2>
@@ -88,7 +73,7 @@ function LaunchMoreInfoPage() {
                 </p>
               </div>
             ) : (
-              <p className={styles["success-launch"]}>{matchedLaunch[0].launchSuccess} Successful</p>
+              <p className={styles["success"]}>{matchedLaunch[0].launchSuccess}Successful</p>
             )}
 
             <h2>Launch Details</h2>
@@ -102,7 +87,7 @@ function LaunchMoreInfoPage() {
             <h3 className={styles["watch-launch-heading-h3"]}>Watch the Launch on Youtube</h3>
 
             {matchedLaunch[0].links.video_link ? (
-              <a className={styles["launch-info-link youtube-link"]} href={matchedLaunch[0].links.video_link} target="#">
+              <a className={`${styles["launch-info-link"]} ${styles["youtube-link"]}`} href={matchedLaunch[0].links.video_link} target="#">
                 Watch on Youtube
               </a>
             ) : (

@@ -20,8 +20,6 @@ function AppParent() {
       launch.launchNumId = ++launchNumId;
     });
 
-/*   globalSpaceXLaunches && console.log(globalSpaceXLaunches); */
-
   return (
     <GlobalContext.Provider value={{ isVisited, setIsVisited, globalSpaceXLaunches, setGlobalSpaceXLaunches, loading }}>
       <App />

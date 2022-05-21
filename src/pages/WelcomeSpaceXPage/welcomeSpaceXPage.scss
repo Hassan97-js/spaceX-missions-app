@@ -58,15 +58,20 @@
 }
 
 .welcome-spaceX-background-heading {
-  margin: 0;
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
   margin-bottom: 3rem;
-  font-family: "Josefin Sans", sans-serif;
+  padding: 0.6em 0.5em 0.5em 0.5em;
   background-color: $orange-color;
 
-  color: $white-color;
-  padding: 0.6em 0.5em 0.5em 0.5em;
-  border-radius: 3px;
   z-index: 3;
+
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  color: $white-color;
+
+  border-radius: 3px;
 }
 
 .welcome-spaceX-page-link {
