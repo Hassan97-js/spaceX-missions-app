@@ -2,32 +2,28 @@ import { Link } from "react-router-dom";
 
 import spaceXlogo from "../../../assets/images/SpaceX-Logo 1.png";
 
-import "./navbar.scss";
+import styles from "./navbar.module.scss";
 
 function Navbar() {
   return (
-    <nav className="nav">
-      <figure className="logo-wrapper">
-        <Link className="logo-link" to="/">
-          <img className="nav-logo" src={spaceXlogo} alt="SpaceX logo" />
+    <nav className={styles.nav}>
+      <figure className={styles["logo-wrapper"]}>
+        <Link className={styles["logo-link"]} to="/">
+          <img className={styles["nav-logo"]} src={spaceXlogo} alt="SpaceX logo" />
         </Link>
-        <figcaption className="logo-caption">Galaxy</figcaption>
+        <figcaption className={styles["logo-caption"]}>Galaxy</figcaption>
       </figure>
 
-      <div className="nav-links">
-        <Link className="nav-link" to="/launches">
+      <div className={styles["nav-links"]}>
+        <Link className={styles["nav-link"]} to="/launches">
           Launches
         </Link>
-        <Link className="nav-link" to="/rockets">
+        <Link className={styles["nav-link"]} to="/rockets">
           Rockets
         </Link>
-        <Link className="nav-link" to="/capsules">
+        <Link className={styles["nav-link"]} to="/capsules">
           Capsules
         </Link>
-
-        {/*<Link className="nav-link" to="/loginForm">
-          Login
-        </Link> */}
       </div>
     </nav>
   );

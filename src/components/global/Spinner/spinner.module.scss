@@ -1,4 +1,4 @@
-@use "../../../styles/" as *;
+@use "../../../styles/base/animations" as *;
 
 $hue: 223;
 $bg: hsl($hue, 10%, 90%);
@@ -11,33 +11,33 @@ $themeTrans: 0.3s;
   margin: auto;
 }
 
-.spinner__ring,
-.spinner__worm1,
-.spinner__worm2,
-.spinner__worm3 {
+.spinner-ring,
+.spinner-worm1,
+.spinner-worm2,
+.spinner-worm3 {
   -webkit-animation-duration: 4s;
   animation-duration: 4s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
 
-.spinner__ring {
+.spinner-ring {
   stroke: hsla($hue, 10%, 10%, 0.1);
   transition: stroke $themeTrans;
 }
 
-.spinner__worm1 {
+.spinner-worm1 {
   -webkit-animation-name: worm1;
   animation-name: worm1;
 }
 
-.spinner__worm2 {
+.spinner-worm2 {
   -webkit-animation-name: worm2;
   animation-name: worm2;
   transform-origin: 32px 88px;
 }
 
-.spinner__worm3 {
+.spinner-worm3 {
   -webkit-animation-name: worm3;
   animation-name: worm3;
   transform-origin: 144px 88px;

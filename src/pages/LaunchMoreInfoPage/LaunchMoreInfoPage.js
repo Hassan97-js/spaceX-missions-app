@@ -15,7 +15,7 @@ function LaunchMoreInfoPage() {
 
   return (
     matchedLaunch && (
-      <div className={`${styles["launch-more-info-page"]}`}>
+      <div className={`${styles["launch-more-info-page"]} container`}>
         <div className={styles["learn-more-image-wrapper"]}>
           {matchedLaunch[0].links.mission_patch ? (
             <img className={styles["spaceX-img"]} src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />

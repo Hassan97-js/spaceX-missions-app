@@ -8,7 +8,7 @@ import Spinner from "../../components/global/Spinner/Spinner";
 import { getUserInput } from "../../utils/eventHandlers";
 import { filterLaunches } from "../../utils/functions";
 
-import "./spaceXLaunchesPage.scss";
+import styles from "./spaceXLaunchesPage.module.scss";
 
 function SpaceXLaunchesPage() {
   const { globalSpaceXLaunches, loading } = useContext(GlobalContext);
@@ -22,36 +22,32 @@ function SpaceXLaunchesPage() {
       {loading ? (
         <Spinner />
       ) : (
-        <main className="spaceX-launches-page">
-          <header className="header-background-img">
-            <div className="explore-header-background container">
-              <h1 className="explore-header">Explore SpaceX Launches</h1>
+        <main className={styles["spaceX-launches-page"]}>
+          <header className={styles["header-background-img"]}>
+            <div className={`${styles["explore-header-background"]} container`}>
+              <h1 className={styles["explore-header"]}>Explore SpaceX Launches</h1>
             </div>
           </header>
 
-          <section className="spaceX-launches-cards-wrapper container">
-            <div tabIndex="1" className="search-wrapper">
+          <section className={`${styles["spaceX-launches-cards-wrapper"]} container`}>
+            <div tabIndex="1" className={styles["search-wrapper"]}>
               <input
                 onChange={(e) => {
                   const userInput = getUserInput(e);
                   setSearchLaunchesInput(userInput);
                 }}
-                className="input-search"
+                className={styles["input-search"]}
                 type="search"
                 placeholder="Search by mission name or success status"
               />
             </div>
 
-            <h2 className="all-launches-heading--h2">All Launches</h2>
+            <h2 className={styles["all-launches-heading--h2"]}>All Launches</h2>
 
             {filteredLaunches.length !== 0 ? (
-              <div className="launches-cards-grid">
+              <div className={styles["launches-cards-grid"]}>
                 {filteredLaunches.map((launch) => {
                   const uuid = uuidv4();
-
-                  /* const isFailureDetailsExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureDetails;
-                  const isFailureTimeExist = checkFailureDetails(launch.launch_failure_details).isFailureTimeExist;
-                  const isFailureReasonExist = checkFailureDetails(launch.launch_failure_details).isLaunchFailureReason; */
 
                   return (
                     <Fragment key={uuid}>
@@ -73,7 +69,7 @@ function SpaceXLaunchesPage() {
                 })}
               </div>
             ) : (
-              <p className="search-result">No Results</p>
+              <p className={styles["search-result"]}>No Results</p>
             )}
           </section>
         </main>

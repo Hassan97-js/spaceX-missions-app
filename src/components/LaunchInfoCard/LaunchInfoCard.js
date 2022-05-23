@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { capitalizeFirstLetter } from "../../utils/functions";
 
-import "./launchInfoCard.scss";
+import styles from "./launchInfoCard.module.scss";
 
 function LaunchInfoCard({
   launchNumId,
@@ -21,58 +21,58 @@ function LaunchInfoCard({
   const uuid = uuidv4();
 
   return (
-    <div className="launch-info-card" key={uuid}>
-      <div className="image-wrapper">
+    <div className={styles["launch-info-card"]} key={uuid}>
+      <div className={styles["image-wrapper"]}>
         {missionPatch ? (
-          <img className="spaceX-image" src={missionPatch} alt="SpaceX mission patch img" />
+          <img className={styles["spaceX-image"]} src={missionPatch} alt="SpaceX mission patch img" />
         ) : (
-          <p className="image-not-available alert-danger">Image is not available</p>
+          <p className={`${styles["image-not-available"]} alert-danger`}>Image is not available</p>
         )}
       </div>
-      <div className="launch-information-wrapper">
-        <h3 className="about-launch-heading--h3">About Mission</h3>
+      <div className={styles["launch-information-wrapper"]}>
+        <h3 className={styles["about-launch-heading-h3"]}>About Mission</h3>
         <p>
-          <span className="about-launch--flight-number about-launch">Flight number:</span> {flightNumber}
+          <span className={`${styles["about-launch-flight-number"]} ${styles["about-launch"]}`}>Flight number:</span> {flightNumber}
         </p>
         <p>
-          <span className="about-launch--mission-name about-launch">Mission name:</span> {missionName}
+          <span className={`${styles["about-launch-mission-name"]} ${styles["about-launch"]}`}>Mission name:</span> {missionName}
         </p>
         <p>
-          <span className="about-launch--mission-year about-launch">Mission year:</span> {launchYear}
+          <span className={`${styles["about-launch-mission-year"]} ${styles["about-launch"]}`}>Mission year:</span> {launchYear}
         </p>
-        <div className="rockets">
-          <h3 className="rockets-heading--h3">About Rocket</h3>
+        <div className={styles.rockets}>
+          <h3 className={styles["rockets-heading-h3"]}>About Rocket</h3>
           <p>
-            <span className="about-rocket">Rocket name:</span> {rocketName}
+            <span className={styles["about-rocket"]}>Rocket name:</span> {rocketName}
           </p>
           <p>
-            <span className="about-rocket">Rocket type:</span> {rocketType}
-          </p>
-        </div>
-        <div className="launch-site">
-          <h3 className="launch-site-heading--h3">About Launch</h3>
-          <p>
-            <span className="about-launch-site">Launch site:</span> {siteName}
+            <span className={styles["about-rocket"]}>Rocket type:</span> {rocketType}
           </p>
         </div>
-        <div className="launch-info">
+        <div className={styles["launch-site"]}>
+          <h3 className={styles["launch-site-heading-h3"]}>About Launch</h3>
+          <p>
+            <span className={styles["about-launch-site"]}>Launch site:</span> {siteName}
+          </p>
+        </div>
+        <div className={styles["launch-info"]}>
           {!launchSuccess ? (
-            <div className="launch-failure-info">
+            <div className={styles["launch-failure-info"]}>
               <p className="failure failure-launch">Unsuccessful</p>
 
-              <p className="failure-times">
-                <span className="about-launch">Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
+              <p className={styles["failure-times"]}>
+                <span className={styles["about-launch"]}>Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
               </p>
 
-              <p className="failure-reason">
-                <span className="about-launch">Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)}
+              <p className={styles["failure-reason"]}>
+                <span className={styles["about-launch"]}>Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)}
               </p>
             </div>
           ) : (
-            <p className="success success-launch">{launchSuccess} Successful</p>
+            <p className={`success ${styles["success-launch"]}`}>{launchSuccess} Successful</p>
           )}
 
-          <Link className="launch-info-link learn-more" to={`launchMoreInfo/${launchNumId}`}>
+          <Link className={`${styles["launch-info-link"]} ${styles["learn-more"]}`} to={`launchMoreInfo/${launchNumId}`}>
             Learn more
           </Link>
         </div>

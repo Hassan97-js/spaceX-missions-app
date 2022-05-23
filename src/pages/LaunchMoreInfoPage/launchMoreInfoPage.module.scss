@@ -1,20 +1,36 @@
 @use "../../styles/" as *;
 
-.watch-launch-heading-h3 {
-  margin-top: 5rem;
-}
-
 .launch-more-info-page {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
   font-size: 1.25rem;
   letter-spacing: 0.05em;
+
+  @include respond(1000) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.launch-more-info-page p {
+  @include respond(1000) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .launch-more-info-page p:not(.success, .failure, .alert-danger) {
   max-width: 500px;
   text-align: left;
+
+  @include respond(1000) {
+    text-align: center;
+  }
+}
+
+.watch-launch-heading-h3 {
+  margin-top: 5rem;
 }
 
 .learn-more-image-wrapper {
@@ -43,15 +59,11 @@
   border-radius: 2px;
 }
 
-.youtube-link {
-  background-color: $danger-color;
-}
-
 .success,
 .failure,
 .alert-danger {
-  width: 80%;
-  max-width: 250px;
+  width: 100%;
+  max-width: 16.625rem;
 
   background: transparent;
   font-weight: 700;
@@ -92,24 +104,8 @@
 
 .youtube-link {
   background-color: $danger-color;
-}
 
-@media screen and (max-width: 61.875em) {
-  .launch-more-info-page {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .launch-more-info-page p:not(.success, .failure, .alert-danger) {
-    text-align: center;
-  }
-
-  .launch-more-info-page p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .youtube-link {
+  @include respond(1000) {
     margin-left: auto;
     margin-right: auto;
   }

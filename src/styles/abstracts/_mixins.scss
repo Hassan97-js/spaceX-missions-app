@@ -1,0 +1,113 @@
+/* Media Queries Manager
+@content directive to pass a block of code
+to a media query */
+
+/*
+$breakpoint choices
+- 1800px
+- 1600px
+- 1400px
+- 1270px
+- 1200px
+- 1000px
+- 870px
+- 750px
+- 650px
+- 500px
+- 400px
+- 320px
+
+1em = default font size of the browser
+1em = 16px
+
+em unit will be converted to px unit and em will
+be adopted to the font size that the user
+set for the browser. em is more accessible
+solution than px
+*/
+
+@mixin respond($breakpoint) {
+  // 1800px
+  @if $breakpoint == 1800 {
+    @media screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+
+  // 1600px
+  @if $breakpoint == 1600 {
+    @media screen and (max-width: 100em) {
+      @content;
+    }
+  }
+
+  // 1400px
+  @if $breakpoint == 1400 {
+    @media screen and (max-width: 87.5em) {
+      @content;
+    }
+  }
+
+  // 1270px
+  @if $breakpoint == 1270 {
+    @media screen and (max-width: 79.375em) {
+      @content;
+    }
+  }
+
+  // 1200px
+  @if $breakpoint == 1200 {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  // 1000px
+  @if $breakpoint == 1000 {
+    @media screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  // 870px
+  @if $breakpoint == 870 {
+    @media screen and (max-width: 54.375em) {
+      @content;
+    }
+  }
+
+  // 750px
+  @if $breakpoint == 750 {
+    @media screen and (max-width: 46.875em) {
+      @content;
+    }
+  }
+
+  // 650px
+  @if $breakpoint == 650 {
+    @media screen and (max-width: 40.625em) {
+      @content;
+    }
+  }
+
+  // 500px
+  @if $breakpoint == 500 {
+    @media screen and (max-width: 31.25em) {
+      @content;
+    }
+  }
+
+  // 400px
+  @if $breakpoint == 400 {
+    @media screen and (max-width: 25em) {
+      @content;
+    }
+  }
+
+  // 300px
+  @if $breakpoint == 320 {
+    @media screen and (max-width: 20em) {
+      @content;
+    }
+  }
+}

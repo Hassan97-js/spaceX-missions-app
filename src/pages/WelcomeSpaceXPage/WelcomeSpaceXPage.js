@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 
 import spaceXlogo from "../../assets/images/SpaceXLogo2.png";
 
-import "./welcomeSpaceXPage.scss";
+import styles from "./welcomeSpaceXPage.module.scss";
 
 function WelcomeSpaceXPage({ isVisited, setIsVisited }) {
   return (
-    <div className="welcome-spaceX-page">
-      <header className="welcome-spaceX-page-header container">
-        <img src={spaceXlogo} alt="SpaceX logo" className="welcome-spaceX-page-logo" />
-        <h1 className="welcome-heading">Welcome to SpaceX Galaxy</h1>
+    <div className={styles["welcome-spaceX-page"]}>
+      <header className={`${styles["welcome-spaceX-page-header"]} container`}>
+        <img className={styles["welcome-spaceX-page-logo"]} src={spaceXlogo} alt="SpaceX logo" />
+        <h1 className={styles["welcome-heading"]}>Welcome to SpaceX Galaxy</h1>
       </header>
 
-      <div className="welcome-spaceX-page-background">
-        <h2 className="welcome-spaceX-background-heading">For launch, rocket and capsules data</h2>
+      <div className={styles["welcome-spaceX-page-background"]}>
+        <h2 className={styles["welcome-spaceX-background-heading"]}>For launch, rocket and capsules data</h2>
         <Link
-          className="welcome-spaceX-page-link"
+          className={styles["welcome-spaceX-page-link"]}
           onClick={() => {
             !isVisited && localStorage.setItem("visited", "true");
             setIsVisited(localStorage.getItem("visited"));
