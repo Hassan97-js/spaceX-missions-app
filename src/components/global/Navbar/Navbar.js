@@ -7,21 +7,21 @@ import styles from "./navbar.module.scss";
 function Navbar() {
   return (
     <nav className={styles.nav}>
-      <figure className={styles["logo-wrapper"]}>
-        <Link className={styles["logo-link"]} to="/">
-          <img className={styles["nav-logo"]} src={spaceXlogo} alt="SpaceX logo" />
-        </Link>
-        <figcaption className={styles["logo-caption"]}>Galaxy</figcaption>
-      </figure>
+      <Link className={styles["nav__logo-link"]} to="/">
+        <figure className={styles["nav__logo-wrapper"]}>
+          <img className={styles["nav__logo"]} src={spaceXlogo} alt="SpaceX logo" />
 
-      <div className={styles["nav-links"]}>
-        <Link className={styles["nav-link"]} to="/launches">
+          <figcaption className={styles["nav__logo-caption"]}>Galaxy</figcaption>
+        </figure>
+      </Link>
+      <div className={styles["nav__links"]}>
+        <Link className={styles["nav__link"]} to="/launches">
           Launches
         </Link>
-        <Link className={styles["nav-link"]} to="/rockets">
+        <Link className={styles["nav__link"]} to="/rockets">
           Rockets
         </Link>
-        <Link className={styles["nav-link"]} to="/capsules">
+        <Link className={styles["nav__link"]} to="/capsules">
           Capsules
         </Link>
       </div>

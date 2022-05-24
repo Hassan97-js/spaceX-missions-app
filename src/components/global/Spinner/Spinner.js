@@ -11,10 +11,10 @@ function Spinner() {
         </linearGradient>
       </defs>
       <g fill="none" strokeWidth="16" strokeLinecap="round">
-        <circle className={styles["spinner-ring"]} r="56" cx="88" cy="96" stroke="hsla(0,10%,10%,0.1)" />
-        <path className={styles["spinner-worm1"]} d="M144,96A56,56,0,0,1,32,96" stroke="url(#spinner-gradient)" strokeDasharray="43.98 307.87" />
+        <circle className={styles["spinner__ring"]} r="56" cx="88" cy="96" stroke="hsla(0,10%,10%,0.1)" />
+        <path className={styles["spinner__worm1"]} d="M144,96A56,56,0,0,1,32,96" stroke="url(#spinner-gradient)" strokeDasharray="43.98 307.87" />
         <path
-          className={styles["spinner-worm2"]}
+          className={styles["spinner__worm2"]}
           d="M32,136V96s-.275-25.725,14-40"
           stroke="hsl(33,90%,55%)"
           strokeDasharray="0 40 0 44"
@@ -22,7 +22,7 @@ function Spinner() {
           visibility="hidden"
         />
         <path
-          className={styles["spinner-worm3"]}
+          className={styles["spinner__worm3"]}
           d="M144,136V96s.275-25.725-14-40"
           stroke="hsl(33,90%,55%)"
           strokeDasharray="0 40 0 44"

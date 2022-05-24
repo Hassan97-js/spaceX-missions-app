@@ -2,8 +2,19 @@
 
 .launches-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(31.5em, 1fr));
   column-gap: 2em;
+
+  @include respond(1270) {
+    grid-template-columns: 0.7fr;
+    justify-content: center;
+    column-gap: 0;
+    row-gap: 2em;
+  }
+
+  @include respond(1000) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .header-background-img {
@@ -125,19 +136,4 @@
 
 .input-search::-webkit-search-cancel-button {
   display: none;
-}
-
-@media screen and (max-width: 87.5em) {
-  .search-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (max-width: 81.25em) {
-  .launches-cards-grid {
-    grid-template-columns: 1fr;
-    column-gap: 0;
-    row-gap: 2em;
-  }
 }

@@ -7,9 +7,9 @@
   color: $black-color;
   display: flex;
   align-items: center;
-}
 
-.footer-content {
-  text-align: center;
-  margin: 3rem auto;
+  &-content {
+    text-align: center;
+    margin: 3rem auto;
+  }
 }

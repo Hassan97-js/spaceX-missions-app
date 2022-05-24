@@ -21,50 +21,59 @@ function LaunchInfoCard({
   const uuid = uuidv4();
 
   return (
-    <div className={styles["launch-info-card"]} key={uuid}>
-      <div className={styles["image-wrapper"]}>
+    <div className={styles.launch} key={uuid}>
+      <div className={styles["launch__patch-wrapper"]}>
         {missionPatch ? (
-          <img className={styles["spaceX-image"]} src={missionPatch} alt="SpaceX mission patch img" />
+          <img className={styles["launch__patch"]} src={missionPatch} alt="SpaceX mission patch img" />
         ) : (
-          <p className={`${styles["image-not-available"]} alert-danger`}>Image is not available</p>
+          <p className={`${styles["launch__patch--unavailable"]} alert-danger text-max-chars-45`}>Patch is unavailable</p>
         )}
       </div>
-      <div className={styles["launch-information-wrapper"]}>
-        <h3 className={styles["about-launch-heading-h3"]}>About Mission</h3>
-        <p>
-          <span className={`${styles["about-launch-flight-number"]} ${styles["about-launch"]}`}>Flight number:</span> {flightNumber}
-        </p>
-        <p>
-          <span className={`${styles["about-launch-mission-name"]} ${styles["about-launch"]}`}>Mission name:</span> {missionName}
-        </p>
-        <p>
-          <span className={`${styles["about-launch-mission-year"]} ${styles["about-launch"]}`}>Mission year:</span> {launchYear}
-        </p>
-        <div className={styles.rockets}>
-          <h3 className={styles["rockets-heading-h3"]}>About Rocket</h3>
-          <p>
-            <span className={styles["about-rocket"]}>Rocket name:</span> {rocketName}
-          </p>
-          <p>
-            <span className={styles["about-rocket"]}>Rocket type:</span> {rocketType}
-          </p>
-        </div>
-        <div className={styles["launch-site"]}>
-          <h3 className={styles["launch-site-heading-h3"]}>About Launch</h3>
-          <p>
-            <span className={styles["about-launch-site"]}>Launch site:</span> {siteName}
-          </p>
-        </div>
-        <div className={styles["launch-info"]}>
-          {!launchSuccess ? (
-            <div className={styles["launch-failure-info"]}>
-              <p className="failure failure-launch">Unsuccessful</p>
 
-              <p className={styles["failure-times"]}>
+      <div className={styles["launch__info-wrapper"]}>
+        <h3 className={`${styles["launch__heading"]} ${styles["launch__heading--h3"]}`}>About Mission</h3>
+
+        <p className="text-max-chars-45">
+          <span className={styles["launch__main-info"]}>Flight number:</span> {flightNumber}
+        </p>
+
+        <p className="text-max-chars-45">
+          <span className={styles["launch__main-info"]}>Mission name:</span> {missionName}
+        </p>
+
+        <p className="text-max-chars-45">
+          <span className={styles["launch__main-info"]}>Mission year:</span> {launchYear}
+        </p>
+
+        <div className={styles["launch__rocket"]}>
+          <h3 className={`${styles["launch__heading"]} ${styles["launch__heading--h3"]}`}>About Rocket</h3>
+
+          <p className="text-max-chars-45">
+            <span className={styles["launch__about-rocket"]}>Rocket name:</span> {rocketName}
+          </p>
+
+          <p className="text-max-chars-45">
+            <span className={styles["launch__about-rocket"]}>Rocket type:</span> {rocketType}
+          </p>
+        </div>
+
+        <div className={styles["launch__site"]}>
+          <h3 className={`${styles["launch__heading"]} ${styles["launch__heading--h3"]}`}>About Launch</h3>
+          <p className="text-max-chars-45">
+            <span className={styles["launch__about-site"]}>Launch site:</span> {siteName}
+          </p>
+        </div>
+
+        <div className={styles["launch__about-rocket"]}>
+          {!launchSuccess ? (
+            <div className={styles["launch__failure-info"]}>
+              <p className="danger failure-launch">Unsuccessful</p>
+
+              <p className={`${styles["failure-times"]} text-max-chars-45`}>
                 <span className={styles["about-launch"]}>Failure time:</span> Launch has failed at {launchFailureTimes + " seconds"}
               </p>
 
-              <p className={styles["failure-reason"]}>
+              <p className={`${styles["failure-reason"]} text-max-chars-45`}>
                 <span className={styles["about-launch"]}>Launch failure reason: </span> {capitalizeFirstLetter(launchFailureReason)}
               </p>
             </div>

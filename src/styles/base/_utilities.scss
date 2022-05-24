@@ -1,5 +1,6 @@
 @use "../abstracts/colors" as *;
 
+/* box-model styles */
 .container {
   width: 85%;
   max-width: 87.5rem;
@@ -32,18 +33,19 @@
   align-items: center;
 }
 
-.success,
-.failure,
-.alert-danger {
+/* typography */
+.text-max-chars-45 {
+  max-width: 45ch;
+}
+
+/* other */
+.alert {
   background: transparent;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.11em;
   padding: 0.5em 1.5em;
   border-radius: 3px;
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .success {
@@ -51,8 +53,7 @@
   color: $success-color;
 }
 
-.failure-launch,
-.alert-danger {
+.danger {
   border: 1px solid $danger-color;
   color: $danger-color;
 }

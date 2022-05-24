@@ -20,7 +20,7 @@
   }
 }
 
-.launch-more-info-page p:not(.success, .failure, .alert-danger) {
+.launch-more-info-page p:not(.alert) {
   max-width: 500px;
   text-align: left;
 
@@ -59,33 +59,17 @@
   border-radius: 2px;
 }
 
-.success,
-.failure,
-.alert-danger {
+.launch__alert {
   width: 100%;
   max-width: 16.625rem;
-
-  background: transparent;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.11em;
-  padding: 0.5em 1.5em;
-  border-radius: 3px;
-
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.success {
-  border: 1px solid $success-color;
-  color: $success-color;
+.launch__alert--success {
   margin-top: 4rem;
   margin-bottom: 4rem;
-}
-
-.failure-launch,
-.alert-danger {
-  border: 1px solid $danger-color;
-  color: $danger-color;
 }
 
 .launch-info-link {

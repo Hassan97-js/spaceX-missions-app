@@ -9,36 +9,36 @@ $themeTrans: 0.3s;
   width: 5em;
   height: 4em;
   margin: auto;
-}
 
-.spinner-ring,
-.spinner-worm1,
-.spinner-worm2,
-.spinner-worm3 {
-  -webkit-animation-duration: 4s;
-  animation-duration: 4s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
+  &__ring,
+  &__worm1,
+  &__worm2,
+  &__worm3 {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
 
-.spinner-ring {
-  stroke: hsla($hue, 10%, 10%, 0.1);
-  transition: stroke $themeTrans;
-}
+  &__ring {
+    stroke: hsla($hue, 10%, 10%, 0.1);
+    transition: stroke $themeTrans;
+  }
 
-.spinner-worm1 {
-  -webkit-animation-name: worm1;
-  animation-name: worm1;
-}
+  &__worm1 {
+    -webkit-animation-name: worm1;
+    animation-name: worm1;
+  }
 
-.spinner-worm2 {
-  -webkit-animation-name: worm2;
-  animation-name: worm2;
-  transform-origin: 32px 88px;
-}
+  &__worm2 {
+    -webkit-animation-name: worm2;
+    animation-name: worm2;
+    transform-origin: 32px 88px;
+  }
 
-.spinner-worm3 {
-  -webkit-animation-name: worm3;
-  animation-name: worm3;
-  transform-origin: 144px 88px;
+  &__worm3 {
+    -webkit-animation-name: worm3;
+    animation-name: worm3;
+    transform-origin: 144px 88px;
+  }
 }

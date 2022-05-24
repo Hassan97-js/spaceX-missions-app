@@ -61,7 +61,7 @@ function LaunchMoreInfoPage() {
           <div className={styles["launch-details"]}>
             {!matchedLaunch[0].launch_success ? (
               <div className={styles["launch-failure-details"]}>
-                <p className={`${styles["failure-launch"]} ${styles.failure}`}>Unsuccessful</p>
+                <p className="alert danger">Unsuccessful</p>
 
                 <p className={styles["failure-times-text"]}>
                   <span className={styles["failure-time"]}>Failure time:</span> Launch has failed at {matchedLaunch[0].launch_failure_details.time + " seconds"}
@@ -73,7 +73,7 @@ function LaunchMoreInfoPage() {
                 </p>
               </div>
             ) : (
-              <p className={styles["success"]}>{matchedLaunch[0].launchSuccess}Successful</p>
+              <p className="alert success">{matchedLaunch[0].launchSuccess}Successful</p>
             )}
 
             <h2>Launch Details</h2>

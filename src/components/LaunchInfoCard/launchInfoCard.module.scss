@@ -1,6 +1,6 @@
 @use "../../styles/" as *;
 
-.launch-info-card {
+.launch {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,29 +15,43 @@
 
   box-shadow: 0 5px 20px rgba(39, 39, 39, 0.2);
   border-radius: 3px;
+
+  &__patch-wrapper {
+    width: 100%;
+  }
+
+  &__patch {
+    width: 80%;
+    max-width: 18.8rem;
+
+    &--unavailable {
+      width: 80%;
+      max-width: 18rem;
+    }
+  }
 }
 
-.launch-info-card p {
-  max-width: 400px;
-}
+/* .launch__patch-wrapper {
+  width: 100%;
+} */
 
-.launch-failure-info,
+/* .launch__patch {
+  width: 80%;
+  max-width: 18.8rem;
+} */
+
+/* .launch p {
+  max-width: 45ch;
+} */
+
+/* .launch__patch--unavailable {
+  width: 80%;
+  max-width: 300px;
+} */
+
+.launch__failure-info,
 .success-launch {
   margin: 3rem 0;
-}
-
-.image-not-available {
-  width: 80%;
-  max-width: 300px;
-}
-
-.image-wrapper {
-  width: 100%;
-}
-
-.spaceX-image {
-  width: 80%;
-  max-width: 300px;
 }
 
 .launch-info-link {
