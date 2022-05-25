@@ -1,11 +1,46 @@
 @use "../../styles/" as *;
 
-.launch-more-info-page {
+.launch-info-page {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
   font-size: 1.25rem;
   letter-spacing: 0.05em;
+
+  &__youtube-info {
+    margin-top: 4rem;
+  }
+
+  @supports selector(:is(*)) {
+    :is(&--unsuccessful, &--successful, &__details--unavailable) {
+      max-width: 15rem;
+    }
+  }
+
+  &--unsuccessful,
+  &--successful,
+  &__details--unavailable {
+    max-width: 15rem;
+  }
+
+  &__patch--unavailable {
+    max-width: 19rem;
+  }
+
+  &__patch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__patch {
+    max-width: 31.5rem;
+    margin-top: 5rem;
+  }
+
+  &__about-launch {
+    margin-top: 3rem;
+  }
 
   @include respond(1000) {
     grid-template-columns: 1fr;
@@ -13,37 +48,37 @@
   }
 }
 
-.launch-more-info-page p {
+/* .launch-info-page__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+} */
+
+/* .launch-info-page__patch {
+  width: 90%;
+  max-width: 31.5rem;
+  margin-top: 5rem;
+} */
+
+/* .launch-info-page p {
   @include respond(1000) {
     margin-left: auto;
     margin-right: auto;
   }
-}
+} */
 
-.launch-more-info-page p:not(.alert) {
-  max-width: 500px;
+/* .launch-info-page p:not(.alert) {
+  max-width: 32rem;
   text-align: left;
 
   @include respond(1000) {
     text-align: center;
   }
-}
+} */
 
-.watch-launch-heading-h3 {
-  margin-top: 5rem;
-}
-
-.learn-more-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.spaceX-img {
-  width: 90%;
-  max-width: 500px;
-  margin-top: 5rem;
-}
+/* .launch-info-page__heading--h3 {
+  margin-top: 4rem;
+} */
 
 .launch-info-link {
   display: block;

@@ -33,9 +33,43 @@
   align-items: center;
 }
 
+/* spacing */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* typography */
+.text-center {
+  text-align: center;
+}
+
 .text-max-chars-45 {
   max-width: 45ch;
+}
+
+.launch-info-link {
+  display: block;
+
+  width: max-content;
+  padding: 0.6em 3em;
+
+  color: $white-color;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.11em;
+
+  border-radius: 1px;
+}
+
+.youtube-link {
+  background-color: $danger-color;
+}
+
+.learn-more {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $orange-color;
 }
 
 /* other */

@@ -7,7 +7,7 @@ import { HiddenNav, HiddenFooter } from "./utils/routers";
 
 import WelcomeSpaceXPage from "./pages/WelcomeSpaceXPage/WelcomeSpaceXPage";
 import SpaceXLaunchesPage from "./pages/SpaceXLaunchesPage/SpaceXLaunchesPage";
-import LaunchMoreInfoPage from "./pages/LaunchMoreInfoPage/LaunchMoreInfoPage";
+import LaunchInfoPage from "./pages/LaunchInfoPage/LaunchInfoPage";
 import Spinner from "./components/global/Spinner/Spinner";
 /* import Form from "./pages/Form/Form"; */
 
@@ -29,7 +29,7 @@ function App() {
             </Route>
             <Route path="/launches">{isVisited ? <SpaceXLaunchesPage /> : <Redirect to="/" />}</Route>
             <Route path="/launchMoreInfo/:id">
-              <LaunchMoreInfoPage />
+              <LaunchInfoPage />
             </Route>
             <Route path="/rockets"></Route>
             <Route path="/capsules"></Route>

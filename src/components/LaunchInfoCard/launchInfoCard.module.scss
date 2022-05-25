@@ -16,64 +16,44 @@
   box-shadow: 0 5px 20px rgba(39, 39, 39, 0.2);
   border-radius: 3px;
 
+  &__info-wrapper {
+    margin-top: 3rem;
+  }
+
+  @supports selector(:is(*)) {
+    :is(&--unsuccessful, &--successful) {
+      max-width: 15rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &--unsuccessful,
+  &--successful {
+    max-width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &__patch-wrapper {
     width: 100%;
   }
 
   &__patch {
-    width: 80%;
     max-width: 18.8rem;
 
     &--unavailable {
-      width: 80%;
-      max-width: 18rem;
+      max-width: 19rem;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
-}
 
-/* .launch__patch-wrapper {
-  width: 100%;
-} */
+  &__about-launch {
+    margin-top: 3rem;
+  }
 
-/* .launch__patch {
-  width: 80%;
-  max-width: 18.8rem;
-} */
-
-/* .launch p {
-  max-width: 45ch;
-} */
-
-/* .launch__patch--unavailable {
-  width: 80%;
-  max-width: 300px;
-} */
-
-.launch__failure-info,
-.success-launch {
-  margin: 3rem 0;
-}
-
-.launch-info-link {
-  display: block;
-
-  width: max-content;
-  padding: 1rem 3rem;
-
-  color: $white-color;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.11em;
-
-  border-radius: 2px;
-}
-
-.youtube-link {
-  background-color: $danger-color;
-}
-
-.learn-more {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: $orange-color;
+  &__link--learn-more {
+    margin-top: 4rem;
+  }
 }
