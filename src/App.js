@@ -15,9 +15,9 @@ import "./styles/styles.scss";
 
 function App() {
   const { isVisited, setIsVisited, loading } = useContext(GlobalContext);
-
+  /* ${loading ? "d-flex flex-jc-ai-center" : ""} */
   return (
-    <div className={`App ${loading ? "d-flex flex-jc-ai-center" : ""}`}>
+    <div className="App d-flex flex-column">
       {loading ? (
         <Spinner />
       ) : (

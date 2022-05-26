@@ -84,7 +84,7 @@ function LaunchInfoCard({
             <p className={`alert success ${styles["launch--successful"]}`}>{launchSuccess} Successful</p>
           )}
 
-          <Link className={`${styles["launch__link--learn-more"]} launch-info-link learn-more`} to={`launchMoreInfo/${launchNumId}`}>
+          <Link className={`${styles["launch__link--learn-more"]} spacex-link learn-more`} to={`launchMoreInfo/${launchNumId}`}>
             Learn more
           </Link>
         </div>

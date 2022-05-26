@@ -24,20 +24,24 @@ function LaunchInfoPage() {
           )}
         </div>
 
-        <div>
-          <h2>About Mission</h2>
+        <div className={styles["launch-info-page__info"]}>
+          <div>
+            <h2>About Mission</h2>
 
-          <p>
-            <span>Flight number:</span> {matchedLaunch[0].flight_number}
-          </p>
+            <p>
+              <span>Flight number:</span> {matchedLaunch[0].flight_number}
+            </p>
 
-          <p>
-            <span>Mission name:</span> {matchedLaunch[0].mission_name}
-          </p>
+            <p>
+              <span>Mission name:</span> {matchedLaunch[0].mission_name}
+            </p>
 
-          <p>
-            <span>Mission year:</span> {matchedLaunch[0].launch_year}
-          </p>
+            <p>
+              <span>Mission year:</span> {matchedLaunch[0].launch_year}
+            </p>
+
+            {matchedLaunch[0].upcoming && <p className="alert info">Upcoming launch</p>}
+          </div>
 
           <div>
             <h2>About Rocket</h2>
@@ -59,7 +63,7 @@ function LaunchInfoPage() {
           </div>
 
           <div className={styles["launch-info-page__about-launch"]}>
-            {!matchedLaunch[0].launch_success && matchedLaunch[0].launch_success !== null ? (
+            {matchedLaunch[0].launch_success === false ? (
               <div>
                 <p className={`alert danger ${styles["launch-info-page--unsuccessful"]}`}>Unsuccessful</p>
 
@@ -72,27 +76,27 @@ function LaunchInfoPage() {
                   {capitalizeFirstLetter(matchedLaunch[0].launch_failure_details.reason)}
                 </p>
               </div>
-            ) : matchedLaunch[0].launch_success !== null ? (
-              <p className={`alert success ${styles["launch-info-page--successful"]}`}>{matchedLaunch[0].launchSuccess}Successful</p>
+            ) : matchedLaunch[0].launch_success === null ? (
+              <p className={`alert warning ${styles["launch-info-page--unknown"]}`}>{matchedLaunch[0].launchSuccess}Rocket hasn't been launched</p>
             ) : (
-              <p className={`alert danger ${styles["launch-info-page--unknown"]}`}>{matchedLaunch[0].launchSuccess}Unknown</p>
+              <p className={`alert success ${styles["launch-info-page--successful"]}`}>{matchedLaunch[0].launchSuccess}Successful</p>
             )}
 
             <div>
               <h2>Launch Details</h2>
 
-              {/*  {matchedLaunch[0].details ? (
+              {matchedLaunch[0].details !== null ? (
                 <p>{matchedLaunch[0].details}</p>
               ) : (
                 <p className={`alert danger ${styles["launch-info-page__details--unavailable"]}`}>Launch details is not available</p>
-              )} */}
+              )}
             </div>
 
             <div className={styles["launch-info-page__youtube-info"]}>
               <h3 className={styles["launch-info-page__heading--h3"]}>Watch the Launch on Youtube</h3>
 
               {matchedLaunch[0].links.video_link ? (
-                <a className="launch-info-link youtube-link" href={matchedLaunch[0].links.video_link} target="#">
+                <a className="spacex-link spacex-link--danger" href={matchedLaunch[0].links.video_link} target="#">
                   Watch on Youtube
                 </a>
               ) : (

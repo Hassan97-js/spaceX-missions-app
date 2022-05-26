@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
+  flex: 1;
+
   font-size: 1.25rem;
   letter-spacing: 0.05em;
 
@@ -30,16 +32,21 @@
   &__patch-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
 
   &__patch {
     max-width: 31.5rem;
-    margin-top: 5rem;
   }
 
   &__about-launch {
     margin-top: 3rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @include respond(1000) {
@@ -80,20 +87,6 @@
   margin-top: 4rem;
 } */
 
-.launch-info-link {
-  display: block;
-
-  width: max-content;
-  padding: 1rem 3rem;
-
-  color: $white-color;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 0.11em;
-
-  border-radius: 2px;
-}
-
 .launch__alert {
   width: 100%;
   max-width: 16.625rem;
@@ -107,7 +100,7 @@
   margin-bottom: 4rem;
 }
 
-.launch-info-link {
+/* .launch-info-link {
   display: block;
 
   width: max-content;
@@ -128,4 +121,4 @@
     margin-left: auto;
     margin-right: auto;
   }
-}
+} */
