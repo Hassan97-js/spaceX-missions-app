@@ -1,4 +1,5 @@
 @use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as *;
 
 /* box-model styles */
 .container {
@@ -34,9 +35,33 @@
 }
 
 /* spacing */
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.8rem;
+}
+
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-auto-1000p {
+  @include respond(1000) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* typography */
@@ -90,8 +115,6 @@
 } */
 
 .learn-more {
-  margin-left: auto;
-  margin-right: auto;
   background-color: $orange-color;
 }
 

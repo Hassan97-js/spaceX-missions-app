@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, Fragment } from "react";
 import { useParams } from "react-router-dom";
 
 import GlobalContext from "../../stateContext/globalContext";
@@ -25,82 +25,78 @@ function LaunchInfoPage() {
         </div>
 
         <div className={styles["launch-info-page__info"]}>
-          <div>
+          <div className={styles["launch-info-page__mission-info"]}>
             <h2>About Mission</h2>
 
-            <p>
+            <p className="mt-1">
               <span>Flight number:</span> {matchedLaunch[0].flight_number}
             </p>
 
-            <p>
+            <p className="mt-1">
               <span>Mission name:</span> {matchedLaunch[0].mission_name}
             </p>
 
-            <p>
+            <p className="mt-1">
               <span>Mission year:</span> {matchedLaunch[0].launch_year}
             </p>
 
-            {matchedLaunch[0].upcoming && <p className="alert info">Upcoming launch</p>}
+            {matchedLaunch[0].upcoming && <p className="alert info mt-1">Upcoming launch</p>}
           </div>
 
-          <div>
+          <div className="mt-5">
             <h2>About Rocket</h2>
-            <p>
+            <p className="mt-1">
               <span>Rocket name:</span> {matchedLaunch[0].rocket.rocket_name}
             </p>
 
-            <p>
+            <p className="mt-1">
               <span>Rocket type:</span> {matchedLaunch[0].rocket.rocket_type}
             </p>
+
+            {matchedLaunch[0].launch_success === null && <p className="alert warning mt-1">{matchedLaunch[0].launchSuccess}Rocket hasn't been launched</p>}
           </div>
 
-          <div>
-            <h2>About Launch</h2>
+          <div className="mt-5">
+            <h2>Launch Details</h2>
 
-            <p>
+            <p className="mt-1">
               <span>Launch site:</span> {matchedLaunch[0].launch_site.site_name_long}
             </p>
-          </div>
 
-          <div className={styles["launch-info-page__about-launch"]}>
-            {matchedLaunch[0].launch_success === false ? (
-              <div>
-                <p className={`alert danger ${styles["launch-info-page--unsuccessful"]}`}>Unsuccessful</p>
+            <Fragment>
+              {matchedLaunch[0].launch_success === false ? (
+                <Fragment>
+                  <p className="alert danger mt-1">Unsuccessful</p>
 
-                <p>
-                  <span>Failure time:</span> Launch has failed at {matchedLaunch[0].launch_failure_details.time + " seconds"}
-                </p>
+                  <p className="mt-1">
+                    <span>Failure time:</span> Launch has failed at {matchedLaunch[0].launch_failure_details.time + " seconds"}
+                  </p>
 
-                <p>
-                  <span>Launch failure reason: </span>
-                  {capitalizeFirstLetter(matchedLaunch[0].launch_failure_details.reason)}
-                </p>
-              </div>
-            ) : matchedLaunch[0].launch_success === null ? (
-              <p className={`alert warning ${styles["launch-info-page--unknown"]}`}>{matchedLaunch[0].launchSuccess}Rocket hasn't been launched</p>
-            ) : (
-              <p className={`alert success ${styles["launch-info-page--successful"]}`}>{matchedLaunch[0].launchSuccess}Successful</p>
-            )}
-
-            <div>
-              <h2>Launch Details</h2>
+                  <p className="mt-1">
+                    <span>Launch failure reason: </span>
+                    {capitalizeFirstLetter(matchedLaunch[0].launch_failure_details.reason)}
+                  </p>
+                </Fragment>
+              ) : (
+                <p className="alert success mt-1">{matchedLaunch[0].launchSuccess}Successful</p>
+              )}
 
               {matchedLaunch[0].details !== null ? (
-                <p>{matchedLaunch[0].details}</p>
+                <p className="mt-2">Launch details: {matchedLaunch[0].details}</p>
               ) : (
-                <p className={`alert danger ${styles["launch-info-page__details--unavailable"]}`}>Launch details is not available</p>
+                <p className="alert danger mt-1">Launch details is not available</p>
               )}
-            </div>
+            </Fragment>
 
-            <div className={styles["launch-info-page__youtube-info"]}>
-              <h3 className={styles["launch-info-page__heading--h3"]}>Watch the Launch on Youtube</h3>
+            <div className="mt-5">
+              <h3>Watch the Launch on Youtube</h3>
 
               {matchedLaunch[0].links.video_link ? (
-                <a className="spacex-link spacex-link--danger" href={matchedLaunch[0].links.video_link} target="#">
+                <a className="spacex-link mt-2 spacex-link--danger mx-auto-1000p" href={matchedLaunch[0].links.video_link} target="#">
                   Watch on Youtube
                 </a>
               ) : (
-                <p className="alert danger">Launch video is not available</p>
+                <p className="alert danger mx-auto-1000p mt-1">Launch video is not available</p>
               )}
             </div>
           </div>
