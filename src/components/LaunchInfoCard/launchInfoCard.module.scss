@@ -13,12 +13,8 @@
   margin-bottom: 1rem;
   padding: 4em 2em;
 
-  box-shadow: 0 5px 20px rgba(39, 39, 39, 0.2);
+  box-shadow: 0 5px 15px rgba(50, 50, 50, 0.1);
   border-radius: 3px;
-
-  &__info-wrapper {
-    margin-top: 3rem;
-  }
 
   @supports selector(:is(*)) {
     :is(&--unsuccessful, &--successful) {
@@ -35,25 +31,13 @@
     margin-right: auto;
   }
 
-  &__patch-wrapper {
-    width: 100%;
-  }
-
-  &__patch {
+  @at-root #{&}__patch {
     max-width: 18.8rem;
-
-    &--unavailable {
-      max-width: 19rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 
-  &__about-launch {
-    margin-top: 3rem;
-  }
-
-  &__link--learn-more {
-    margin-top: 4rem;
+  @at-root #{&}__patch--unavailable {
+    max-width: 19rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

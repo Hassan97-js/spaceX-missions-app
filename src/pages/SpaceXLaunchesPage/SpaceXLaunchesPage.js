@@ -60,8 +60,6 @@ function SpaceXLaunchesPage() {
                         rocketName={launch.rocket.rocket_name}
                         rocketType={launch.rocket.rocket_type}
                         siteName={launch.launch_site.site_name_long}
-                        launchFailureTimes={launch.launch_failure_details && launch.launch_failure_details.time}
-                        launchFailureReason={launch.launch_failure_details && launch.launch_failure_details.reason}
                         launchSuccess={launch.launch_success}
                       />
                     </Fragment>

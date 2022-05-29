@@ -1,7 +1,7 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as *;
 
-/* box-model styles */
+/* box-model */
 .container {
   width: 85%;
   max-width: 87.5rem;
@@ -52,6 +52,10 @@
   margin-bottom: 1.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.8rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -69,7 +73,7 @@
   text-align: center;
 }
 
-.text-max-chars-45 {
+.max-ch-45 {
   max-width: 45ch;
 }
 
