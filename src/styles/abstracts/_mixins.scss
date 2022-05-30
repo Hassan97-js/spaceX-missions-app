@@ -105,10 +105,3 @@ solution than px
     }
   }
 }
-
-/* Selectors Manager */
-@mixin unify-parent($child) {
-  @at-root #{&}__#{$child} {
-    @content;
-  }
-}

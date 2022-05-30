@@ -5,9 +5,9 @@ import GlobalContext from "../../stateContext/globalContext";
 
 import { filterLaunch, capitalizeFirstLetter } from "../../utils/functions";
 
-import styles from "./launchInfoPage.module.scss";
+import styles from "./spaceXLaunchPage.module.scss";
 
-function LaunchInfoPage() {
+function SpaceXLaunchPage() {
   const { globalSpaceXLaunches } = useContext(GlobalContext);
   const { id } = useParams();
 
@@ -15,17 +15,17 @@ function LaunchInfoPage() {
 
   return (
     matchedLaunch && (
-      <div className={`${styles["launch-info-page"]} container`}>
-        <div className={styles["launch-info-page__patch-wrapper"]}>
+      <div className={`${styles["spacex-launch-page"]} container`}>
+        <div className={styles["spacex-launch-page__patch-wrapper"]}>
           {matchedLaunch[0].links.mission_patch ? (
-            <img className={styles["launch-info-page__patch"]} src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
+            <img className={styles["spacex-launch-page__patch"]} src={matchedLaunch[0].links.mission_patch} alt="SpaceX mission patch img" />
           ) : (
-            matchedLaunch[0].links.mission_patch === null && <p className={`alert danger ${styles["launch-info-page__patch--unavailable"]}`}>Patch is unavailable</p>
+            matchedLaunch[0].links.mission_patch === null && <p className={`alert danger ${styles["spacex-launch-page__patch--unavailable"]}`}>Patch is unavailable</p>
           )}
         </div>
 
-        <div className={styles["launch-info-page__info"]}>
-          <div className={styles["launch-info-page__mission-info"]}>
+        <div className={styles["spacex-launch-page__info"]}>
+          <div className={styles["spacex-launch-page__mission-info"]}>
             <h2>About Mission</h2>
 
             <p className="mt-1">
@@ -106,4 +106,4 @@ function LaunchInfoPage() {
   );
 }
 
-export default LaunchInfoPage;
+export default SpaceXLaunchPage;

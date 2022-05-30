@@ -1,9 +1,10 @@
 @use "../../styles/" as *;
 
-.launch-info-page {
+.spacex-launch-page {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2em;
+
   flex: 1;
 
   font-size: 1.25rem;

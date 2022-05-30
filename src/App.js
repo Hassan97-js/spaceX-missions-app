@@ -5,9 +5,9 @@ import GlobalContext from "./stateContext/globalContext";
 
 import { HiddenNav, HiddenFooter } from "./utils/routers";
 
-import WelcomeSpaceXPage from "./pages/WelcomeSpaceXPage/WelcomeSpaceXPage";
+import SpaceXWelcomePage from "./pages/SpaceXWelcomePage/SpaceXWelcomePage";
 import SpaceXLaunchesPage from "./pages/SpaceXLaunchesPage/SpaceXLaunchesPage";
-import LaunchInfoPage from "./pages/LaunchInfoPage/LaunchInfoPage";
+import SpaceXLaunchPage from "./pages/SpaceXLaunchPage/SpaceXLaunchPage";
 import Spinner from "./components/global/Spinner/Spinner";
 /* import Form from "./pages/Form/Form"; */
 
@@ -25,11 +25,11 @@ function App() {
           <HiddenNav />
           <Switch>
             <Route exact path="/">
-              {!isVisited ? <WelcomeSpaceXPage isVisited={isVisited} setIsVisited={setIsVisited} /> : <Redirect to="/launches" />}
+              {!isVisited ? <SpaceXWelcomePage isVisited={isVisited} setIsVisited={setIsVisited} /> : <Redirect to="/launches" />}
             </Route>
             <Route path="/launches">{isVisited ? <SpaceXLaunchesPage /> : <Redirect to="/" />}</Route>
             <Route path="/launchMoreInfo/:id">
-              <LaunchInfoPage />
+              <SpaceXLaunchPage />
             </Route>
             <Route path="/rockets"></Route>
             <Route path="/capsules"></Route>

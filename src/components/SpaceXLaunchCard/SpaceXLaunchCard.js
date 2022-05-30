@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 
 /* import { capitalizeFirstLetter } from "../../utils/functions"; */
 
-import styles from "./launchInfoCard.module.scss";
+import styles from "./spaceXLaunchCard.module.scss";
 
-function LaunchInfoCard({ launchNumId, missionPatch, flightNumber, missionName, launchYear, rocketName, rocketType, siteName, launchSuccess }) {
+function SpaceXLaunchCard({ launchNumId, missionPatch, flightNumber, missionName, launchYear, rocketName, rocketType, siteName, launchSuccess }) {
   const uuid = uuidv4();
 
   return (
@@ -22,15 +22,15 @@ function LaunchInfoCard({ launchNumId, missionPatch, flightNumber, missionName, 
         <div>
           <h3>About Mission</h3>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Flight number:</span> {flightNumber}
           </p>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Mission name:</span> {missionName}
           </p>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Mission year:</span> {launchYear}
           </p>
         </div>
@@ -38,11 +38,11 @@ function LaunchInfoCard({ launchNumId, missionPatch, flightNumber, missionName, 
         <div className="mt-2">
           <h3>About Rocket</h3>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Rocket name:</span> {rocketName}
           </p>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Rocket type:</span> {rocketType}
           </p>
         </div>
@@ -50,7 +50,7 @@ function LaunchInfoCard({ launchNumId, missionPatch, flightNumber, missionName, 
         <div className="mt-2">
           <h3>About Launch</h3>
 
-          <p className="max-ch-45">
+          <p className="max-ch-45 mt-1">
             <span>Launch site:</span> {siteName}
           </p>
         </div>
@@ -71,4 +71,4 @@ function LaunchInfoCard({ launchNumId, missionPatch, flightNumber, missionName, 
   );
 }
 
-export default LaunchInfoCard;
+export default SpaceXLaunchCard;

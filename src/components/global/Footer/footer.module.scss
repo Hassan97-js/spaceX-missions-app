@@ -1,15 +1,16 @@
 @use "../../../styles/" as *;
 
 .footer {
-  width: 100%;
-  height: auto;
-  font-size: 1.2rem;
-  color: $black-color;
   display: flex;
   align-items: center;
 
-  &-content {
-    text-align: center;
+  width: 100%;
+
+  font-size: 1.2rem;
+  color: $black-color;
+
+  &__content {
     margin: 3rem auto;
+    text-align: center;
   }
 }
